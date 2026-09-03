@@ -173,19 +173,6 @@
   }
   .hero-actions{display:flex;gap:18px;flex-wrap:wrap;}
 
-  .hero-stamp{
-    position:absolute;
-    right:8px;
-    top:-10px;
-    width:168px;
-    height:168px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid var(--ink);
-    background:var(--periwinkle);
-    transform:rotate(3deg);
-  }
-
   /* ---------- services ---------- */
   .services{padding:88px 0;border-top:1px solid var(--line);}
   .section-head{max-width:620px;margin-bottom:56px;}
@@ -627,7 +614,6 @@
     .nav-links a{padding:12px 0;width:100%;}
     .nav-toggle{display:block;}
     .nav-cta .btn-ghost{display:none;}
-    .hero-stamp{display:none;}
     .work-grid{grid-template-columns:1fr;}
     .two-col{grid-template-columns:1fr;}
     .check-grid{grid-template-columns:1fr;}
