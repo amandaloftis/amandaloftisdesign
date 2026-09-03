@@ -146,8 +146,10 @@
   .hero{padding:88px 0 96px;overflow:hidden;}
   .hero-inner{position:relative;}
   .hero-badges{
-    display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:36px;
   }
+  .hero-badges .badge{border:none;}
+  .hero-badges-dot{color:var(--ink-soft);font-size:18px;line-height:1;}
   .headline{margin:0 0 40px;}
   .headline-row{margin:0 0 14px;}
   .block{
