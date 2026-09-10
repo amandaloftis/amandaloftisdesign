@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Amanda Loftis Design Studio</title>
+<meta name="description" content="Brand systems, websites, illustration and imagery, and copy and content from Amanda Loftis Design Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="wave" d="M0 70 C 200 46, 400 94, 600 70 S 1000 46, 1200 70"></path>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">Amanda Loftis</a>
+  <nav class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="services.html" aria-current="page">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="photo-hero photo-hero--services">
+    <span class="photo-hero__note">IMAGE</span>
+    <div class="stack">
+      <span class="eyebrow">My services</span>
+      <h1 class="h1" style="margin-top:10px;max-width:14ch">Here&rsquo;s what I do <em class="serif">best</em></h1>
+    </div>
+  </section>
+  <div class="ribbon-slot--below">
+    <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
+      <use class="ribbon__band" href="#wave" style="stroke:#FF5B22"></use>
+      <text class="ribbon__text" fill="#ffffff" dominant-baseline="middle">
+        <textPath href="#wave" startOffset="0%">
+          LET&rsquo;S BUILD SOMETHING YOUR AUDIENCE CAN&rsquo;T IGNORE ✳ LET&rsquo;S BUILD SOMETHING YOUR AUDIENCE CAN&rsquo;T IGNORE ✳
+          <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
+        </textPath>
+      </text>
+    </svg>
+  </div>
+  <section class="section section--center" style="padding-bottom:clamp(46px,6vw,82px)">
+    <p style="margin:0;max-width:26ch;font-family:var(--display);font-weight:700;font-size:clamp(22px,2.8vw,32px);line-height:1.25;letter-spacing:-.02em">Take one piece or the whole system. Everything is designed so the next piece still <em class="serif mark-mint">fits</em>.</p>
+    <p class="lede" style="max-width:50ch;font-size:14px">I provide a holistic approach to brand-building that reaches across all your users&rsquo; touch points, from the feed they find you on to the menu they hold in their hands.</p>
+  </section>
+  <section style="padding:0 var(--gutter) clamp(46px,6vw,82px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(14px,2vw,22px)">
+    <div class="card bg-mint">
+      <span class="card__num">01</span>
+      <h3 class="h3" style="font-size:clamp(21px,2.4vw,27px)">Brand systems</h3>
+      <p>Logo, type, color and the rules that keep them consistent when you hand them to someone else.</p>
+      <div class="card__tags"><span>Logo suite</span><span>Type &amp; color</span><span>Guidelines</span></div>
+    </div>
+    <div class="card bg-royal">
+      <span class="card__num">02</span>
+      <h3 class="h3" style="font-size:clamp(21px,2.4vw,27px)">Websites</h3>
+      <p>Designed and built by the same person. Fast, editable by you, and structured so search engines understand it.</p>
+      <div class="card__tags"><span>Design</span><span>Build</span><span>CMS setup</span><span>SEO</span></div>
+    </div>
+    <div class="card bg-gold">
+      <span class="card__num">03</span>
+      <h3 class="h3" style="font-size:clamp(21px,2.4vw,27px)">Illustration &amp; imagery</h3>
+      <p>Custom drawings, icons and art direction so your site isn&rsquo;t furnished with the same stock photos as everyone else.</p>
+      <div class="card__tags"><span>Illustration</span><span>Icon sets</span><span>Art direction</span></div>
+    </div>
+    <div class="card bg-peach">
+      <span class="card__num">04</span>
+      <h3 class="h3" style="font-size:clamp(21px,2.4vw,27px)">Copy &amp; content</h3>
+      <p>Words that sound like you, plus the ongoing feeds and printed pieces that keep the brand in front of people.</p>
+      <div class="card__tags"><span>Site copy</span><span>Social</span><span>Print</span></div>
+    </div>
+  </section>
+  <section class="section section--blue" style="padding-top:clamp(44px,5vw,74px);padding-bottom:clamp(44px,5vw,74px)">
+    <div class="cta-row">
+      <h2 class="h2" style="max-width:24ch;font-size:clamp(22px,2.8vw,34px)">Not sure which piece you need? Start with a conversation.</h2>
+      <a class="btn btn--gold" href="contact.html">Book a call</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <div>
+      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
+      <div class="footer__note">Brand, web and everything in between.</div>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('animate').forEach(function (el) { el.remove(); });
+}
+</script>
+</body>
+</html>

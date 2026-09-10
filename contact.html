@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Amanda Loftis Design Studio</title>
+<meta name="description" content="Reach out about a new site, a brand refresh, or something you can't quite name yet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">Amanda Loftis</a>
+  <nav class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="photo-hero photo-hero--contact">
+    <span class="photo-hero__note" style="top:16px;right:20px;left:auto;transform:none">IMAGE</span>
+    <h1 class="h1" style="font-size:clamp(30px,4.6vw,58px);line-height:1.04;max-width:18ch">Have <em class="serif">questions</em>? Ready to move forward?</h1>
+  </section>
+  <section class="section section--center" style="gap:26px">
+    <h2 class="h2" style="max-width:24ch;font-size:clamp(22px,2.8vw,32px);font-weight:700">Reach out and I&rsquo;ll get back within <em class="serif">48 hours</em></h2>
+    <form class="form" onsubmit="return false">
+      <span class="eyebrow" style="color:#2f5c63">Contact</span>
+      <label><span>Name</span><input placeholder="Your name" required></label>
+      <label><span>Email</span><input type="email" placeholder="you@company.com" required></label>
+      <label><span>Company</span><input placeholder="Optional"></label>
+      <label><span>Message</span><textarea rows="4" placeholder="A new site, a refresh, or something you can&rsquo;t name yet" required></textarea></label>
+      <button class="btn btn--orange" type="submit">Submit</button>
+    </form>
+    <p style="margin:0;font-size:14px;font-weight:700">hello@amandaloftis.io</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <div>
+      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
+      <div class="footer__note">Brand, web and everything in between.</div>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
