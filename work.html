@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — Amanda Loftis Design Studio</title>
+<meta name="description" content="Selected brand, web, illustration and print projects from Amanda Loftis Design Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">Amanda Loftis</a>
+  <nav class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="work.html" aria-current="page">Work</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="section section--purple" style="padding-bottom:clamp(56px,7vw,96px)">
+    <span class="eyebrow eyebrow--purple">The portfolio</span>
+    <h1 class="h1" style="margin-top:12px;font-size:clamp(38px,7vw,96px);line-height:.95">Selected <em class="serif">Work</em></h1>
+    <p class="body" style="margin-top:18px;max-width:46ch;color:#332b3d;font-size:15px">Each project covers the whole presence — identity, site, imagery and the words in between.</p>
+  </section>
+  <section class="section" style="padding-top:clamp(34px,4vw,58px)">
+    <div class="filters" id="filters">
+      <span data-filter="all" aria-pressed="true">All</span>
+      <span data-filter="branding">Branding</span>
+      <span data-filter="web">Web</span>
+      <span data-filter="illustration">Illustration</span>
+      <span data-filter="print">Print</span>
+    </div>
+    <div class="work-grid" id="workGrid">
+      <article class="work-card" data-tags="branding web">
+        <a class="work-card__media" href="work/piedmont-global-preschool.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>BRANDING</span><span>WEB</span></div>
+        <h3 class="h3"><a href="work/piedmont-global-preschool.html">Piedmont Global Preschool</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">Identity, site and enrollment flow for a bilingual preschool opening its second campus.</p>
+      </article>
+      <article class="work-card" data-tags="web">
+        <a class="work-card__media" href="work/fluree.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>WEB</span></div>
+        <h3 class="h3"><a href="work/fluree.html">Fluree</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">Marketing site and diagram system for a data platform with a technical story to tell.</p>
+      </article>
+      <article class="work-card" data-tags="print illustration">
+        <a class="work-card__media" href="work/date-night-questions.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>PRINT</span><span>ILLUSTRATION</span></div>
+        <h3 class="h3"><a href="work/date-night-questions.html">Date Night Questions</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">Packaging and a small shop for a card deck that outgrew its first print run.</p>
+      </article>
+      <article class="work-card" data-tags="branding print">
+        <a class="work-card__media" href="work/sable-and-fen.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>BRANDING</span><span>PRINT</span></div>
+        <h3 class="h3"><a href="work/sable-and-fen.html">Sable &amp; Fen</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">Brand refresh and menu system for a neighborhood restaurant group.</p>
+      </article>
+      <article class="work-card" data-tags="illustration">
+        <a class="work-card__media" href="work/ridgeline-trail-co.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>ILLUSTRATION</span></div>
+        <h3 class="h3"><a href="work/ridgeline-trail-co.html">Ridgeline Trail Co.</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">Hand-drawn trail maps and a merch line for a regional outfitter.</p>
+      </article>
+      <article class="work-card" data-tags="web branding">
+        <a class="work-card__media" href="work/harbor-financial.html"><div class="ph">IMAGE</div></a>
+        <div class="tagrow"><span>WEB</span><span>BRANDING</span></div>
+        <h3 class="h3"><a href="work/harbor-financial.html">Harbor Financial</a></h3>
+        <p class="body" style="font-size:13.5px;max-width:44ch">A quiet, trustworthy presence for an advisory firm that hated its old one.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <div>
+      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
+      <div class="footer__note">Brand, web and everything in between.</div>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var filters = document.querySelectorAll('#filters span');
+var cards = document.querySelectorAll('#workGrid .work-card');
+filters.forEach(function (pill) {
+  pill.addEventListener('click', function () {
+    filters.forEach(function (p) { p.setAttribute('aria-pressed', 'false'); });
+    pill.setAttribute('aria-pressed', 'true');
+    var f = pill.dataset.filter;
+    cards.forEach(function (card) {
+      var show = f === 'all' || card.dataset.tags.split(' ').indexOf(f) !== -1;
+      card.hidden = !show;
+    });
+  });
+});
+</script>
+</body>
+</html>

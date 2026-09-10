@@ -3,441 +3,145 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Amanda Loftis Design — Websites for small business owners</title>
-<meta name="description" content="Amanda Loftis Design builds modern, playful websites on Wix, Squarespace, and Framer for small business owners in Greensboro, NC and beyond." />
+<title>Amanda Loftis Design Studio — brand, web &amp; illustration</title>
+<meta name="description" content="A one-person studio in Greensboro, NC building brand systems, websites, illustration and copy that all fit together.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Roboto+Serif:opsz,wght@8..144,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
-<header>
-  <div class="nav-inner">
-    <a href="#top" class="logo">
-      <img src="images/logo.png" alt="Amanda Loftis Design Studio">
-    </a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="wave" d="M0 70 C 200 46, 400 94, 600 70 S 1000 46, 1200 70"></path>
+  </defs>
+</svg>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-ghost" style="padding:12px 20px;">Say hello</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+<header class="nav">
+  <a class="nav__brand" href="index.html">Amanda Loftis</a>
+  <nav class="nav__links">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="work.html">Work</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="wrap hero-inner">
-
-    <svg class="flower" style="top:40px;left:-6px;width:44px;" viewBox="0 0 100 100" aria-hidden="true">
-      <path fill="currentColor" d="M50 0 C55 25 60 30 85 25 C65 40 65 45 90 55 C62 52 58 58 65 85 C50 62 45 62 35 85 C40 58 35 52 8 55 C35 45 35 40 12 25 C40 30 45 25 50 0Z"/>
-    </svg>
-
-    <div class="hero-badges">
-      <span class="badge">No developer needed</span>
-      <span class="hero-badges-dot" aria-hidden="true">&bull;</span>
-      <span class="badge on-sky">Built in Wix, Squarespace, and Framer</span>
+<main>
+  <section class="hero">
+    <h1 class="display-xl">AMANDA LOFTIS</h1>
+    <div class="hero__split">
+      <div class="ph ph--royal">IMAGE</div>
+      <div class="ph">IMAGE</div>
     </div>
-
-    <h1 class="headline">
-      <span class="headline-row"><span class="block coral">Websites</span></span>
-      <span class="headline-row"><span class="block navy">small business owners</span></span>
-      <span class="headline-row"><span class="block blush">can actually maintain</span></span>
-    </h1>
-
-    <p class="hero-sub">I design and build modern sites for small businesses in Greensboro and beyond, then hand you the keys. No code to mess with, just a site you can update yourself and a real person you can call when you have questions.</p>
-
-    <div class="hero-actions">
-      <button class="btn btn-primary" onclick="openModal()">Tell me about your project</button>
-      <a href="#work" class="btn btn-ghost">See past work</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Services</h2>
-    </div>
-
-    <div class="service-list">
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Website design</span>
-          <span class="service-desc">Sites you can actually update yourself.</span>
-        </div>
-      </div>
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Logo design</span>
-          <span class="service-desc">A mark that works everywhere your brand shows up.</span>
-        </div>
-      </div>
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Custom illustration</span>
-          <span class="service-desc">Original art made just for your brand.</span>
-        </div>
-      </div>
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Website photography</span>
-          <span class="service-desc">Photos that match your site, not fight it.</span>
-        </div>
-      </div>
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Marketing design &amp; consulting</span>
-          <span class="service-desc">Templates, graphics, and an honest second opinion.</span>
-        </div>
-      </div>
-      <div class="service-row">
-        <span class="service-arrow" aria-hidden="true">→</span>
-        <div class="service-text">
-          <span class="service-name">Copywriting</span>
-          <span class="service-desc">Words on your site that actually sound like you.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOGISTICS BANNER ============ -->
-<section class="logistics-banner">
-  <div class="wrap logistics-inner">
-    <span class="logistics-label">Beyond the build</span>
-    <h2>Already have a site? I can help with that too.</h2>
-    <p>I help with all the logistics that come with building and maintaining a digital presence, not just the design part. Need help moving to a new platform? Building forms? Setting up a domain? Connecting email? I've got you covered!</p>
-    <button class="btn btn-ghost" onclick="openModal()">Ask about migration &amp; setup</button>
-  </div>
-</section>
-
-<!-- ============ WORK / PORTFOLIO ============ -->
-<section class="work" id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Recent work</h2>
-      <p>A handful of small businesses I've built sites, brands, and campaigns for. Ask me for the full portfolio if you want to see more.</p>
-    </div>
-
-    <div class="work-grid">
-      <a class="project-card" href="work/willow-rye.html">
-        <div class="project-thumb sky">W</div>
-        <div class="project-body">
-          <h3>Willow &amp; Rye</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="project-card" href="work/pinecrest-dental.html">
-        <div class="project-thumb ink">P</div>
-        <div class="project-body">
-          <h3>Pinecrest Dental</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="project-card" href="work/marigold-studio-yoga.html">
-        <div class="project-thumb blush">M</div>
-        <div class="project-body">
-          <h3>Marigold Studio Yoga</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="project-card" href="work/the-corner-nook.html">
-        <div class="project-thumb ink">C</div>
-        <div class="project-body">
-          <h3>The Corner Nook</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="project-card" href="work/bramblewood-landscaping.html">
-        <div class="project-thumb sky">B</div>
-        <div class="project-body">
-          <h3>Bramblewood Landscaping</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="project-card" href="work/nora-grace-photography.html">
-        <div class="project-thumb blush">N</div>
-        <div class="project-body">
-          <h3>Nora Grace Photography</h3>
-          <div class="project-meta">
-            <span class="project-link">View project</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="pricing" id="pricing">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Packages &amp; pricing</h2>
-      <p>Three starting points, built around how much site you need and how hands-on you want me to be. Everything can flex — this is just the jumping-off point.</p>
-    </div>
-
-    <div class="plans">
-      <div class="plan">
-        <span class="plan-tag">Starter</span>
-        <h3>Starter</h3>
-        <p class="price">from $1,800</p>
-        <ul class="plan-features">
-          <li>Up to 5 pages</li>
-          <li>Wix or Squarespace</li>
-          <li>Mobile-responsive build</li>
-          <li>2 rounds of revisions</li>
-          <li>Self-editing walkthrough video</li>
-        </ul>
-        <button class="btn btn-ghost" onclick="openModal()">Start here</button>
-      </div>
-
-      <div class="plan featured">
-        <span class="plan-tag">Most popular</span>
-        <h3>Growth</h3>
-        <p class="price">from $3,200</p>
-        <ul class="plan-features">
-          <li>Up to 8 pages</li>
-          <li>Blog or booking setup</li>
-          <li>Copy polish included</li>
-          <li>Basic SEO setup</li>
-          <li>3 rounds of revisions</li>
-          <li>30-minute training call</li>
-        </ul>
-        <button class="btn btn-ghost" onclick="openModal()">Start here</button>
-      </div>
-
-      <div class="plan">
-        <span class="plan-tag">Signature</span>
-        <h3>Signature</h3>
-        <p class="price">from $5,500</p>
-        <ul class="plan-features">
-          <li>Framer build with custom interactions</li>
-          <li>Illustration or photography add-on included</li>
-          <li>Optional full brand refresh</li>
-          <li>Unlimited revisions within scope</li>
-          <li>Priority timeline</li>
-        </ul>
-        <button class="btn btn-ghost" onclick="openModal()">Start here</button>
-      </div>
-    </div>
-
-    <div class="addons">
-      <div class="addons-head">
-        <h3>À la carte add-ons</h3>
-        <span class="badge">Mix and match with any package</span>
-      </div>
-      <div class="addon-row"><span>Logo design</span><span class="addon-price">$450</span></div>
-      <div class="addon-row"><span>Brand color &amp; font system</span><span class="addon-price">$250</span></div>
-      <div class="addon-row"><span>Custom illustration (single piece)</span><span class="addon-price">$180</span></div>
-      <div class="addon-row"><span>Website photography session, half-day (Greensboro area)</span><span class="addon-price">$400</span></div>
-      <div class="addon-row"><span>Copywriting, per page</span><span class="addon-price">$120</span></div>
-      <div class="addon-row"><span>Social media template set (10 templates)</span><span class="addon-price">$350</span></div>
-      <div class="addon-row"><span>Monthly site maintenance</span><span class="addon-price">$75 / mo</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo">
-      <svg class="flower" viewBox="0 0 100 100" aria-hidden="true">
-        <path fill="var(--coral)" d="M50 0 C55 25 60 30 85 25 C65 40 65 45 90 55 C62 52 58 58 65 85 C50 62 45 62 35 85 C40 58 35 52 8 55 C35 45 35 40 12 25 C40 30 45 25 50 0Z"/>
+    <a class="badge" href="contact.html">Let&rsquo;s<br>Connect</a>
+    <div class="ribbon-slot--hero">
+      <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
+        <use class="ribbon__band" href="#wave" style="stroke:#AEE6ED"></use>
+        <text class="ribbon__text" fill="#131313" dominant-baseline="middle">
+          <textPath href="#wave" startOffset="0%">
+            BRAND SYSTEMS ✳ WEBSITES ✳ ILLUSTRATION ✳ COPY ✳ BRAND SYSTEMS ✳ WEBSITES ✳ ILLUSTRATION ✳ COPY ✳
+            <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
+          </textPath>
+        </text>
       </svg>
-      <img src="images/avatar.png" alt="Illustrated portrait of Amanda Loftis">
     </div>
-    <div class="about-copy">
-      <span class="script-lead">Hi, I'm Amanda</span>
-      <h2>A designer for the business owner who'd rather run their business than a website.</h2>
-      <p>I'm a web designer based in Greensboro, North Carolina, working with small business owners who need a site that looks like it cost more than it did — and who never want to call a developer just to change their hours.</p>
-      <p>I build almost everything in Wix and Squarespace, so you can log in and make changes yourself. For clients who want something a little more custom, I also build in Framer, where I can design interactions you won't find in a template.</p>
-      <div class="about-badges">
-        <span class="badge">Based in Greensboro, NC</span>
-        <span class="badge on-blush">Wix &amp; Squarespace expert</span>
-        <span class="badge on-sky">Will always pick a serif font</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="wrap contact-inner">
-    <svg class="flower" viewBox="0 0 100 100" aria-hidden="true">
-      <path fill="currentColor" d="M50 0 C55 25 60 30 85 25 C65 40 65 45 90 55 C62 52 58 58 65 85 C50 62 45 62 35 85 C40 58 35 52 8 55 C35 45 35 40 12 25 C40 30 45 25 50 0Z"/>
+  <section class="section section--center">
+    <span class="eyebrow">What I do here</span>
+    <h2 class="h2" style="max-width:20ch;font-size:clamp(28px,4.2vw,52px)">Imagine your entire digital presence <span class="mark-gold">managed</span>, <span class="mark-mint">polished</span>, and <em class="serif mark-royal">cohesive</em></h2>
+    <p class="lede">Brand systems, websites, illustration and copy built by one person who sees the whole picture. Nothing gets handed off and lost between the identity, the site and the words.</p>
+    <a class="btn btn--royal" href="services.html">View the services</a>
+  </section>
+
+  <section class="split">
+    <div class="split__media ph">IMAGE</div>
+    <div class="split__copy">
+      <span class="eyebrow eyebrow--mint">Just having a website doesn&rsquo;t cut it anymore.</span>
+      <h2 class="h2" style="max-width:16ch">If safe and forgettable is the goal, I&rsquo;m <em class="serif">not</em> your person</h2>
+      <p class="body body--mint" style="max-width:46ch">In 2026, people are using the internet differently than ever before. Between social media, AI search results, and word of mouth, having a cohesive digital presence is essential to gain brand trust and to meet users where they are.</p>
+      <a class="btn btn--gold" style="align-self:flex-start" href="contact.html">See how I can help</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="h2" style="text-align:center;margin-bottom:clamp(28px,4vw,48px);font-size:clamp(28px,4vw,48px)">What I <em class="serif">bring</em></h2>
+    <div class="bento">
+      <div class="card bg-mint"><h3 class="h3">Curated social feeds</h3><p>A grid that looks like the rest of your brand, planned in advance instead of posted in a panic.</p></div>
+      <div class="card bg-royal"><h3 class="h3">A human-made website</h3><p>Designed and built by the same person, editable by you, structured so search engines understand it.</p></div>
+      <div class="card bg-gold"><h3 class="h3">Custom illustration</h3><p>Drawings, icons and imagery so your site isn&rsquo;t furnished with the same stock photos as everyone else.</p></div>
+      <div class="card bg-peach"><h3 class="h3">Copy that sounds like you</h3><p>Engaging words that carry your voice across the site, the feed and the inbox.</p></div>
+      <div class="card bg-sand"><h3 class="h3">Printed materials</h3><p>Menus, flyers and swag that match the digital work instead of fighting it.</p></div>
+      <div class="card bg-peri"><h3 class="h3">SEO &amp; metadata</h3><p>Tailored titles, structure and tags that help the right users actually find you.</p></div>
+    </div>
+  </section>
+
+  <div class="ribbon-slot--above">
+    <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
+      <use class="ribbon__band" href="#wave" style="stroke:#F2BB05"></use>
+      <text class="ribbon__text" fill="#131313" dominant-baseline="middle">
+        <textPath href="#wave" startOffset="0%">
+          ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳
+          <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
+        </textPath>
+      </text>
     </svg>
-    <svg class="flower two" viewBox="0 0 100 100" aria-hidden="true">
-      <path fill="currentColor" d="M50 0 C55 25 60 30 85 25 C65 40 65 45 90 55 C62 52 58 58 65 85 C50 62 45 62 35 85 C40 58 35 52 8 55 C35 45 35 40 12 25 C40 30 45 25 50 0Z"/>
-    </svg>
+  </div>
 
-    <h2>Got a project in mind?</h2>
-    <p>Tell me a little about your style and what you're looking for, and I'll get back to you within two business days.</p>
-    <div class="contact-actions">
-      <button class="btn btn-primary" onclick="openModal()">Start the conversation</button>
-      <a href="https://calendar.google.com/" target="_blank" rel="noopener" class="btn btn-ghost">Book 15 minutes to chat</a>
+  <section class="section section--dark" style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:center;padding-top:clamp(64px,8vw,110px)">
+    <div class="ph ph--dark" style="flex:0 1 280px;min-width:min(100%,240px);height:clamp(220px,24vw,320px);border-radius:18px">IMAGE</div>
+    <div style="flex:1 1 340px;min-width:min(100%,280px);max-width:560px">
+      <span class="eyebrow eyebrow--gold">BEYOND THE BUILD</span>
+      <h2 class="h2" style="margin-top:14px;max-width:18ch">Already have a site? I can help with <em class="serif">that</em> too.</h2>
+      <p class="body body--dark" style="margin-top:16px">I help with all the logistics that come with building and maintaining a digital presence, not just the design part. Need help moving to a new platform? Building forms? Setting up a domain? Connecting email? I&rsquo;ve got you covered.</p>
+      <a class="btn btn--mint" style="margin-top:24px" href="contact.html">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-row" style="align-items:baseline;margin-bottom:clamp(24px,3vw,40px)">
+      <h2 class="h2" style="font-size:clamp(30px,4.4vw,54px)">Recent <em class="serif">Projects</em></h2>
+      <a href="work.html" style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1.5px solid #131313">All work</a>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="work/piedmont-global-preschool.html"><span class="ph">IMAGE</span><span class="tile__label">Piedmont Global Preschool</span></a>
+      <a class="tile" href="work/fluree.html"><span class="ph">IMAGE</span><span class="tile__label">Fluree</span></a>
+      <a class="tile" href="work/date-night-questions.html"><span class="ph">IMAGE</span><span class="tile__label">Date Night Questions</span></a>
+      <a class="tile" href="work/sable-and-fen.html"><span class="ph">IMAGE</span><span class="tile__label">Sable &amp; Fen</span></a>
+    </div>
+  </section>
+
+  <section class="section section--purple">
+    <div class="cta-row">
+      <h2 class="h2" style="max-width:22ch;font-size:clamp(24px,3.2vw,40px)">Ready to look like the studio you actually are? Let&rsquo;s bring your vision to <em class="serif">life</em>.</h2>
+      <a class="btn btn--ink" href="contact.html">Reach out</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <div>
+      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
+      <div class="footer__note">Brand, web and everything in between.</div>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap footer-inner">
-    <a href="#top" class="logo">
-      <img src="images/logo.png" alt="Amanda Loftis Design Studio">
-    </a>
-
-    <div class="footer-links">
-      <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-  <div class="wrap footer-fine">Greensboro, North Carolina · amanda@amandaloftis.io</div>
 </footer>
 
-<!-- ============ MODAL ============ -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">Close ✕</button>
-
-    <div id="formView">
-      <h3>Let's talk about your project</h3>
-      <p>The more you tell me, the faster I can put together the right package for you.</p>
-
-      <form id="projectForm">
-        <div class="two-col">
-          <div class="form-row">
-            <label for="fname">Name</label>
-            <input type="text" id="fname" required>
-          </div>
-          <div class="form-row">
-            <label for="femail">Email</label>
-            <input type="email" id="femail" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label for="fbiz">Business name</label>
-          <input type="text" id="fbiz">
-        </div>
-
-        <div class="form-row">
-          <label for="fstyle">Tell me about your style</label>
-          <textarea id="fstyle" placeholder="Fonts, colors, sites you love, brands that feel like you..."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label>Which services are you interested in?</label>
-          <div class="check-grid">
-            <span class="check-item"><input type="checkbox" id="s1"><label for="s1" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Website design</label></span>
-            <span class="check-item"><input type="checkbox" id="s2"><label for="s2" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Logo design</label></span>
-            <span class="check-item"><input type="checkbox" id="s3"><label for="s3" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Custom illustration</label></span>
-            <span class="check-item"><input type="checkbox" id="s4"><label for="s4" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Website photography</label></span>
-            <span class="check-item"><input type="checkbox" id="s5"><label for="s5" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Marketing design</label></span>
-            <span class="check-item"><input type="checkbox" id="s6"><label for="s6" style="margin:0;text-transform:none;letter-spacing:normal;font-size:14px;font-family:var(--body);color:var(--ink);">Copywriting</label></span>
-          </div>
-        </div>
-
-        <div class="two-col">
-          <div class="form-row">
-            <label for="fbudget">Budget range</label>
-            <select id="fbudget">
-              <option>Under $2,000</option>
-              <option>$2,000–$4,000</option>
-              <option>$4,000–$7,000</option>
-              <option>Let's discuss</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="ftimeline">Timeline</label>
-            <select id="ftimeline">
-              <option>ASAP</option>
-              <option>1–3 months</option>
-              <option>3–6 months</option>
-              <option>Just exploring</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary modal-submit">Send it over</button>
-      </form>
-
-      <div class="modal-cal">
-        Rather talk it through first? <a href="https://calendar.google.com/" target="_blank" rel="noopener">Book 15 minutes on my calendar</a>.
-      </div>
-    </div>
-
-    <div class="thankyou" id="thankyouView">
-      <svg class="flower" viewBox="0 0 100 100" aria-hidden="true">
-        <path fill="var(--coral)" d="M50 0 C55 25 60 30 85 25 C65 40 65 45 90 55 C62 52 58 58 65 85 C50 62 45 62 35 85 C40 58 35 52 8 55 C35 45 35 40 12 25 C40 30 45 25 50 0Z"/>
-      </svg>
-      <h3>Got it, thank you!</h3>
-      <p>I'll read through everything and get back to you within two business days.</p>
-    </div>
-  </div>
-</div>
-
 <script>
-  // mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  // modal
-  const overlay = document.getElementById('modalOverlay');
-  function openModal(){
-    overlay.classList.add('open');
-    document.getElementById('formView').style.display = 'block';
-    document.getElementById('thankyouView').classList.remove('show');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(){
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
-
-  // fake submit -> thank you state
-  document.getElementById('projectForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('formView').style.display = 'none';
-    document.getElementById('thankyouView').classList.add('show');
-  });
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('animate').forEach(function (el) { el.remove(); });
+}
 </script>
-
 </body>
 </html>

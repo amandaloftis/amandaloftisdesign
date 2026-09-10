@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Amanda Loftis Design Studio</title>
+<meta name="description" content="A one-person studio that designs identities, builds sites, draws illustrations and writes the words in between.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="wave" d="M0 70 C 200 46, 400 94, 600 70 S 1000 46, 1200 70"></path>
+  </defs>
+</svg>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">Amanda Loftis</a>
+  <nav class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="services.html">Services</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="section section--mint" style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(40px,5vw,72px)">
+    <div style="flex:1 1 320px;min-width:min(100%,280px);max-width:560px">
+      <span class="eyebrow" style="color:#2f5c63">About the studio</span>
+      <h1 class="h1" style="margin-top:12px;font-size:clamp(32px,5vw,62px)">Hi, I&rsquo;m Amanda. I make the whole thing <em class="serif">cohesive</em>.</h1>
+      <p class="body body--mint" style="margin-top:20px;max-width:44ch;font-size:15px;line-height:1.75">I run a one-person studio, which means the person who designs your identity is the person who builds your site, draws your illustrations and writes your alt text.</p>
+      <p class="body body--mint" style="margin-top:14px;max-width:44ch;font-size:15px;line-height:1.75">I work with small teams, founders and schools who need to look established without pretending to be something they aren&rsquo;t.</p>
+    </div>
+    <div class="ph" style="flex:0 1 320px;min-width:min(100%,260px);height:clamp(300px,32vw,420px);border-radius:18px">PORTRAIT</div>
+  </section>
+  <div class="ribbon-slot--below">
+    <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
+      <use class="ribbon__band" href="#wave" style="stroke:#DBB8FF"></use>
+      <text class="ribbon__text" fill="#131313" dominant-baseline="middle">
+        <textPath href="#wave" startOffset="0%">
+          SMALL STUDIO ✳ WHOLE PICTURE ✳ SMALL STUDIO ✳ WHOLE PICTURE ✳ SMALL STUDIO ✳ WHOLE PICTURE ✳
+          <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
+        </textPath>
+      </text>
+    </svg>
+  </div>
+  <section class="section section--center" style="gap:28px">
+    <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path fill="#FF5B22" d="M98 50 L66.6 56.9 L84 68.4 L60.4 66.6 L68.4 84 L54.6 64.1 L50 98 L45.4 64.1 L31.6 84 L39.6 66.6 L16 68.4 L33.4 56.9 L2 50 L33.4 43.1 L16 31.6 L39.6 33.4 L31.6 16 L45.4 35.9 L50 2 L54.6 35.9 L68.4 16 L60.4 33.4 L84 31.6 L66.6 43.1 Z"></path></svg>
+    <p style="margin:0;text-align:center;max-width:24ch;font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,34px);line-height:1.22;letter-spacing:-.025em">Everything built with intention, none of it off the shelf.</p>
+    <div class="facts">
+      <div class="fact"><div class="fact__k">9 yrs</div><div class="fact__v">designing and building</div></div>
+      <div class="fact"><div class="fact__k">40+</div><div class="fact__v">brands shipped</div></div>
+      <div class="fact"><div class="fact__k">1</div><div class="fact__v">person, start to finish</div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <div>
+      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
+      <div class="footer__note">Brand, web and everything in between.</div>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('animate').forEach(function (el) { el.remove(); });
+}
+</script>
+</body>
+</html>
