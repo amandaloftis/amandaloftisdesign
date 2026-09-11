@@ -85,12 +85,14 @@ client-side router, just plain `<a href="services.html">`-style links.
    two-up image split, a circular "Let's Connect" badge linking to Contact,
    and a mint ribbon marquee), a centered statement section linking to
    Services, an image+copy split band linking to Contact, a 6-card "What I
-   bring" bento grid, a gold ribbon, a **centered** ("Beyond the Build")
-   dark band on non-design logistics (image, eyebrow, headline, two body
+   bring" bento grid, a gold ribbon, a dark band on non-design logistics
+   ("Beyond the Build" — image left, left-aligned eyebrow/headline/two body
    paragraphs — including a "Sites built on Wix, Squarespace, and Framer"
-   line — and a button, all stacked and centered via `.section--center`,
-   not the original design handoff's side-by-side image+copy layout)
-   linking to Contact, a 4-tile "Recent Projects" preview (linking to 4 of
+   line — and a button on the right, matching the original design handoff's
+   side-by-side layout, but with `justify-content:center` added to the flex
+   row so the whole two-column block centers as a group within the section
+   on wide viewports instead of hugging the left edge) linking to Contact,
+   a 4-tile "Recent Projects" preview (linking to 4 of
    the 6 `work/*.html` pages, plus an "All work" link to `work.html`), and
    a closing **centered** purple CTA band (also `.section--center`, not
    the handoff's left-heading/right-button `.cta-row`) linking to Contact.
