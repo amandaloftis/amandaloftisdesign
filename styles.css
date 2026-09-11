@@ -73,10 +73,51 @@ button:focus-visible,
 }
 .nav a { color: #fff; }
 .nav__brand { font-family: var(--display); font-weight: 800; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
+.nav__right { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.6vw, 32px); }
 .nav__links { display: flex; flex-wrap: wrap; gap: clamp(12px, 2vw, 26px); align-items: center; }
 .nav__links a { font-size: 12.5px; font-weight: 600; padding: 3px 1px; border-bottom: 1.5px solid transparent; }
 .nav__links a:hover,
 .nav__links a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
+.nav__social { display: inline-flex; color: #fff; }
+.nav__social:hover { color: var(--gold); }
+
+/* ---------- Mobile nav: hamburger + right-side drawer ---------- */
+/* The only fixed breakpoint on the site — every other layout is fluid via
+   clamp()/auto-fit, but a hamburger/drawer pattern is inherently a hard
+   on/off toggle, not something that scales continuously. */
+.nav__toggle {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 34px; height: 34px; padding: 0; border: none; background: none; cursor: pointer; flex-shrink: 0;
+}
+.nav__toggle span { display: block; width: 100%; height: 2px; background: #fff; border-radius: 2px; }
+.nav-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(78vw, 320px); z-index: 100;
+  background: var(--electric); color: #fff;
+  display: flex; flex-direction: column; gap: 28px;
+  padding: clamp(20px, 4vw, 32px);
+  box-shadow: -8px 0 28px rgba(0,0,0,.2);
+  transform: translateX(100%); transition: transform .3s ease;
+}
+.nav-drawer.open { transform: translateX(0); }
+.nav-drawer__close {
+  align-self: flex-end; width: 34px; height: 34px; margin-top: -4px; margin-right: -6px;
+  border: none; background: none; color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+}
+.nav-drawer__links { display: flex; flex-direction: column; gap: 22px; }
+.nav-drawer__links a { font-family: var(--display); font-weight: 700; font-size: 19px; color: #fff; }
+.nav-drawer__links a:hover, .nav-drawer__links a[aria-current="page"] { color: var(--gold); }
+.nav-drawer__social { display: inline-flex; color: #fff; margin-top: auto; }
+.nav-drawer__social:hover { color: var(--gold); }
+.nav-scrim {
+  position: fixed; inset: 0; z-index: 90; background: rgba(19,19,19,.45);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.nav-scrim.open { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 680px) {
+  .nav__right { display: none; }
+  .nav__toggle { display: flex; }
+}
 
 /* ---------- Sections ---------- */
 .section { padding: clamp(52px, 7vw, 96px) var(--gutter); }
@@ -94,7 +135,7 @@ button:focus-visible,
 
 .display-xl { /* home wordmark */
   margin: 0; font-family: var(--display); font-weight: 800;
-  font-size: clamp(44px, 11.4vw, 168px); line-height: .9; letter-spacing: -.045em;
+  font-size: clamp(31px, 8.3vw, 125px); line-height: .9; letter-spacing: -.045em;
   color: var(--cream); white-space: nowrap; overflow: hidden;
   padding: clamp(14px, 2vw, 22px) clamp(16px, 3vw, 32px) .06em;
 }
@@ -251,6 +292,15 @@ button:focus-visible,
 
 /* ---------- Split CTA rows ---------- */
 .cta-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+
+/* ---------- Platform badge row (Services CTA band) ---------- */
+.platform-row { display: flex; flex-direction: column; gap: 12px; }
+.platform-row__logos { display: flex; flex-wrap: wrap; gap: 10px; }
+.platform-badge {
+  font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: -.01em;
+  color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.4);
+  padding: 8px 20px; border-radius: var(--r-pill);
+}
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: #fff; padding: clamp(36px, 5vw, 64px) var(--gutter) 26px; }

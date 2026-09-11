@@ -14,14 +14,37 @@
 
 <header class="nav">
   <a class="nav__brand" href="../index.html">Amanda Loftis</a>
-  <nav class="nav__links">
+  <div class="nav__right">
+    <nav class="nav__links">
+      <a href="../index.html">Home</a>
+      <a href="../work.html" aria-current="page">Work</a>
+      <a href="../services.html">Services</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <a class="nav__social" href="https://instagram.com/amandaloftisdesign" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+  </div>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">&times;</button>
+  <nav class="nav-drawer__links">
     <a href="../index.html">Home</a>
     <a href="../work.html" aria-current="page">Work</a>
     <a href="../services.html">Services</a>
     <a href="../about.html">About</a>
     <a href="../contact.html">Contact</a>
   </nav>
-</header>
+  <a class="nav-drawer__social" href="https://instagram.com/amandaloftisdesign" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  </a>
+</div>
+<div class="nav-scrim" id="navScrim"></div>
 
 <main>
   <section class="section" style="padding-bottom:0">
@@ -85,5 +108,32 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var scrim = document.getElementById('navScrim');
+  var closeBtn = document.getElementById('navDrawerClose');
+  function openDrawer() {
+    drawer.classList.add('open');
+    scrim.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    scrim.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+})();
+</script>
 </body>
 </html>
