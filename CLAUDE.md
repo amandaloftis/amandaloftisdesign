@@ -81,14 +81,19 @@ placeholder `.ph` divs with `<img>` tags at the same box dimensions and
 Five real, separate top-level pages — no anchor-scrolling single-pager, no
 client-side router, just plain `<a href="services.html">`-style links.
 
-1. **`index.html` (Home)** — hero (cream wordmark "AMANDA LOFTIS" over a
+1. **`index.html` (Home)** — hero (cream wordmark "DESIGNED FOR YOU" over a
    two-up image split, a circular "Let's Connect" badge linking to Contact,
    and a mint ribbon marquee), a centered statement section linking to
    Services, an image+copy split band linking to Contact, a 6-card "What I
    bring" bento grid, a gold ribbon, a dark band on non-design logistics
    linking to Contact, a 4-tile "Recent Projects" preview (linking to 4 of
    the 6 `work/*.html` pages, plus an "All work" link to `work.html`), and
-   a closing purple CTA band linking to Contact.
+   a closing purple CTA band linking to Contact. The wordmark string changed
+   from the original design handoff's "AMANDA LOFTIS" — `.display-xl`'s
+   `font-size` clamp was scaled down (`clamp(31px, 8.3vw, 125px)`, from the
+   original `clamp(44px, 11.4vw, 168px)`) to keep the longer "DESIGNED FOR
+   YOU" on one line without clipping at the `white-space: nowrap` treatment;
+   re-check this clamp if the copy changes again.
 2. **`work.html` (Work)** — purple hero, a **working** filter-pill row
    (All/Branding/Web/Illustration/Print — filters by `data-tags` on each
    `.work-card`, toggling the `hidden` attribute via the inline script; see
@@ -97,7 +102,10 @@ client-side router, just plain `<a href="services.html">`-style links.
 3. **`services.html`** — full-bleed photo hero, an orange ribbon
    overlapping it, a centered statement, 4 numbered service cards (Brand
    systems / Websites / Illustration & imagery / Copy & content), and a
-   closing electric-blue CTA band linking to Contact.
+   closing electric-blue CTA band with a "Built with" platform-badge row
+   (`.platform-row`/`.platform-badge` — currently text pills reading Wix,
+   Squarespace, Framer, standing in for real logo marks) above the
+   "Not sure which piece you need?" CTA, linking to Contact.
 4. **`about.html`** — mint band (bio copy + portrait placeholder), a
    purple ribbon, then a centered block with a rotating orange starburst
    SVG, a statement line, and 3 fact cards (9 yrs / 40+ / 1 person).
@@ -189,6 +197,21 @@ token set.
   on the Home hero ("Let's Connect" → Contact). Not a repeated pill-badge
   system like the previous design's dotted badges — there's only one on
   the whole site.
+- **Nav social icon** (`.nav__social`, and `.nav-drawer__social` inside the
+  mobile drawer): a white inline-SVG Instagram glyph (the Feather/Lucide
+  rounded-square-camera icon, `stroke="currentColor"`, no fill) at the far
+  right of the nav bar, linking to `https://instagram.com/amandaloftisdesign`
+  — **a placeholder handle**, swap for Amanda's real Instagram URL before
+  launch. Sits inside `.nav__right` alongside `.nav__links` on desktop, and
+  is duplicated at the bottom of the mobile drawer (see JS behavior below)
+  since the drawer replaces `.nav__right` entirely at narrow widths — update
+  both copies of the icon/link together, they're not shared markup.
+- **Platform badge row** (`.platform-row`/`.platform-badge`): a "Built with"
+  label + pill row (currently reading Wix / Squarespace / Framer) inside
+  Services' closing blue CTA band, reusing the translucent-chip look from
+  `.card__tags`. These are plain text pills, not real brand logo marks —
+  swap in actual SVG logos if/when that's wanted, but don't hand-draw
+  approximations of the brand marks themselves.
 - **Bento / numbered cards** (`.card`, `.bg-*`): rounded, flat-color cards
   used for "What I bring" (Home) and the 4 numbered services (Services).
   Tints rotate through `.bg-mint/.bg-royal/.bg-gold/.bg-peach/.bg-sand/.bg-peri`
@@ -239,10 +262,40 @@ the same script** — don't assume every page has the same JS available.
   somewhere, replace the `onsubmit="return false"` with a real submit
   handler (e.g. point it at Formspree/Basin, or add a `fetch()` call to a
   backend).
-- No mobile hamburger menu — `.nav__links` is a plain flex-wrap row that
-  wraps naturally at narrow widths. Don't reintroduce the previous design's
-  `#navToggle` hamburger pattern without being asked; this design doesn't
-  use one.
+- **Mobile nav drawer** (every page): below 680px, CSS hides `.nav__right`
+  (the links + Instagram icon) and shows `.nav__toggle`, a hamburger button.
+  A `#navDrawer` panel (fixed, right-aligned, slides in via
+  `transform: translateX()`) and a `#navScrim` backdrop live as siblings
+  right after `</header>` — not nested inside the sticky `<header>` — so
+  they can cover the full viewport height regardless of scroll position.
+  Each page repeats this identical inline script (same IDs everywhere:
+  `navToggle`, `navDrawer`, `navScrim`, `navDrawerClose`):
+  ```html
+  <script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var drawer = document.getElementById('navDrawer');
+    var scrim = document.getElementById('navScrim');
+    var closeBtn = document.getElementById('navDrawerClose');
+    function openDrawer() { /* adds .open to drawer+scrim, locks body scroll */ }
+    function closeDrawer() { /* removes .open, unlocks body scroll */ }
+    toggle.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    scrim.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+  })();
+  </script>
+  ```
+  The drawer duplicates the same nav links (with the same `aria-current`)
+  and the Instagram icon found in `.nav__right` — **when changing nav
+  links, update both the desktop `.nav__links` copy and the
+  `.nav-drawer__links` copy on every page**, they're not shared markup.
+  This is deliberately re-added on top of the original design handoff,
+  which had no hamburger at all (nav links just wrapped via flex-wrap);
+  the 680px breakpoint that drives it (in `styles.css`) is the **one
+  fixed `@media` breakpoint on the site** — see the note in "Conventions
+  for making changes" below.
 
 ## Content that is still placeholder
 
@@ -284,10 +337,13 @@ end users as final without checking with the person running this project:
   adjusted for the folder depth, same back-link/tags/hero/gallery/write-up/
   meta/CTA structure. Don't invent a different page shell per project.
 - This design is fully fluid (`clamp()` for type/spacing, `auto-fit`/
-  `minmax()` grids, `flex-wrap` everywhere) — there are **no fixed
-  `@media` breakpoints** anywhere in `styles.css`, unlike the previous
-  design. Verify layout changes at ~375px, ~768px, and ~1440px instead of
-  checking against specific breakpoint widths.
+  `minmax()` grids, `flex-wrap` everywhere) — **the only fixed `@media`
+  breakpoint in `styles.css` is the 680px one that swaps the nav between
+  its inline links and the hamburger/drawer** (see JS behavior above).
+  Don't add other fixed breakpoints for general layout; keep using
+  `clamp()`/`auto-fit` for anything that isn't a hard on/off UI toggle like
+  the nav. Verify layout changes at ~375px, ~768px, and ~1440px, and also
+  check just above/below 680px specifically when touching the nav.
 - Respect the existing `prefers-reduced-motion` handling (the CSS rule for
   `.star`, and the inline-script pattern for ribbons) — don't add new
   animations without accounting for both.
