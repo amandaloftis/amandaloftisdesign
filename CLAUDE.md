@@ -17,9 +17,11 @@ form.
 **As of September 2026 the site went through a full visual and structural
 redesign**, replacing an earlier cobalt/coral, Sora/Roboto-Serif single-page
 design (anchor-navigated, with a pricing section and a JS contact modal).
-The current design is a bright "editorial creative studio" look — candy
-palette, oversized Archivo display type, Instrument Serif italic accents,
-and animated wavy ribbon marquees — built as five real, separate pages.
+That design (bright candy palette, ribbon marquees) was then restyled in
+**November 2026** into the current dark "product studio" look — black
+canvas, one orange accent, giant Instrument Serif headlines, wide Archivo
+statements, Space Mono labels — still built as five real, separate pages
+(see Design system).
 **There is no pricing page, no contact modal, and no booking-link CTA in
 the current design** — don't reintroduce them without being asked; they
 belonged to the previous iteration.
@@ -79,62 +81,60 @@ placeholder `.ph` divs with `<img>` tags at the same box dimensions and
 ## Page structure
 
 Five real, separate top-level pages — no anchor-scrolling single-pager, no
-client-side router, just plain `<a href="services.html">`-style links.
+client-side router, just plain `<a href="services.html">`-style links. Every
+page shares the same floating pill nav, footer, and scroll-reveal script.
 
-1. **`index.html` (Home)** — hero (cream wordmark "DESIGNED FOR YOU" over a
-   two-up image split, a circular "Let's Connect" badge linking to Contact,
-   and a mint ribbon marquee), a centered statement section linking to
-   Services, an image+copy split band linking to Contact, a 6-card "What I
-   bring" bento grid, a gold ribbon, a **centered** ("Beyond the Build")
-   dark band on non-design logistics (image, eyebrow, headline, two body
-   paragraphs — including a "Sites built on Wix, Squarespace, and Framer"
-   line — and a button, all stacked and centered via `.section--center`,
-   not the original design handoff's side-by-side image+copy layout)
-   linking to Contact, a 4-tile "Recent Projects" preview (linking to 4 of
-   the 6 `work/*.html` pages, plus an "All work" link to `work.html`), and
-   a closing **centered** purple CTA band (also `.section--center`, not
-   the handoff's left-heading/right-button `.cta-row`) linking to Contact.
-   The wordmark string changed
-   from the original design handoff's "AMANDA LOFTIS" — `.display-xl`'s
-   `font-size` clamp was scaled down (`clamp(31px, 8.3vw, 125px)`, from the
-   original `clamp(44px, 11.4vw, 168px)`) to keep the longer "DESIGNED FOR
-   YOU" on one line without clipping at the `white-space: nowrap` treatment;
-   re-check this clamp if the copy changes again.
-2. **`work.html` (Work)** — purple hero, a **working** filter-pill row
-   (All/Branding/Web/Illustration/Print — filters by `data-tags` on each
-   `.work-card`, toggling the `hidden` attribute via the inline script; see
-   JS behavior below), and a 6-card grid. Each card's image and title link
-   to its own page under `work/`.
-3. **`services.html`** — full-bleed photo hero, an orange ribbon
-   overlapping it, a centered statement, 4 numbered service cards (Brand
-   systems / Websites / Illustration & imagery / Copy & content), and a
-   closing electric-blue CTA band with a "Built with" platform-badge row
-   (`.platform-row`/`.platform-badge` — currently text pills reading Wix,
-   Squarespace, Framer, standing in for real logo marks) above the
-   "Not sure which piece you need?" CTA, linking to Contact.
-4. **`about.html`** — mint band (bio copy + portrait placeholder), a
-   purple ribbon, then a centered block with a rotating orange starburst
-   SVG, a statement line, and 3 fact cards (9 yrs / 40+ / 1 person).
-5. **`contact.html`** — a photo hero with a centered headline, then a
-   centered mint contact form (Name/Email/Company/Message, `required` on
-   Name/Email/Message) and the studio email below it. The form is
-   **front-end only** — see JS behavior.
+1. **`index.html` (Home)** — a full-width glowing image panel (`.ph--hero
+   .ph--glow`) with the giant serif headline "Designed for you." and a
+   subline below it, plus a small `.hero-card` at the right ("Brand, web,
+   illustration & copy / Greensboro, NC" + a "Let's connect" button →
+   Contact). Then, in order: a "What I do here" statement linking to
+   Services; an image + "Strategy" statement two-up linking to Contact; a
+   6-panel "What I bring" grid (numbered 01–06); a dotted "Beyond the build"
+   panel (statement on the left; logistics copy, a "Sites built on" Wix /
+   Squarespace / Framer tag row and a button on the right); a 2×2 "Recent
+   projects" grid (4 of the 6 `work/*.html` pages, plus an "All work" link);
+   and a centered closing CTA with the giant serif "Let's make it."
+2. **`work.html` (Work)** — giant serif "Selected work." header, a
+   **working** filter row (All/Branding/Web/Illustration/Print `<button>`s
+   with `aria-pressed`, filtering by `data-tags` on each `.work-card`), and
+   a 6-card grid (image, caption, mono tags). Each card's image and title
+   link to its page under `work/`.
+3. **`services.html`** — glowing hero panel with the giant serif "What I do
+   best.", a two-column statement ("Take one piece or the whole system…"),
+   4 numbered service panels (Brand systems / Websites / Illustration &
+   imagery / Copy & content, each with mono tags), and a closing panel with
+   a "Built with" Wix/Squarespace/Framer tag row above the "Not sure which
+   piece you need?" CTA → Contact.
+4. **`about.html`** — "Hi, I'm Amanda." serif headline + statement + bio
+   paragraphs beside a tall portrait placeholder; then a centered spinning
+   orange starburst, the statement "Everything built with intention, none
+   of it off the shelf.", and 3 spec cards (9 yrs / 40+ / 1).
+5. **`contact.html`** — giant serif "Let's talk.", then a two-column split:
+   statement + studio email on the left, a dotted panel with the contact
+   form (Name/Email/Company/Message, `required` on Name/Email/Message) on
+   the right. The form is **front-end only** — see JS behavior.
 
 **`work/*.html` are real separate pages**, each a standalone HTML document
-(own `<head>`, `<header>`, `<footer>`) covering one project: a back-to-work
-link, category tags, an `<h1>` + one-line description, a large image
-placeholder, a 3-item tinted gallery placeholder (each labeled — "Homepage",
-"Mobile view", etc., reusing the `bg-*` card-tint classes for variety), a
-three-part write-up ("The brief" / "What we built" / "The result"), a small
-meta row (platform, services, timeline), and a closing CTA linking to
-`../contact.html`. This detail-page template isn't part of the original
-design handoff (which only specified the `work.html` grid, with no
-drill-down) — it was extended from the previous site's project-page
-pattern and restyled with the current design system's tokens/classes to
-stay visually consistent. **These pages don't have their own contact form**
-— the CTA and nav both link back to `contact.html`.
+(own `<head>`, nav, footer) covering one project: a mono back-to-work link,
+tag row, serif `<h1>` + one-line statement, a large glowing image
+placeholder, a 3-up gallery of labeled placeholders, a three-column
+write-up ("The brief" / "What we built" / "The result", each under an
+orange eyebrow), a hairline-topped meta row (platform, services, timeline),
+and a closing CTA panel linking to `../contact.html`. **These pages don't
+have their own contact form.**
 
 ## Design system
+
+**As of November 2026 the site was restyled to a dark "product studio"
+look**, modeled on the feel of electronicmaterialsoffice.com: near-black
+canvas, one hot orange accent, huge light serif display headlines, wide
+grotesk "statement" paragraphs with a white lead and gray continuation,
+tiny orange monospace eyebrows, dark rounded panels, and a floating
+translucent pill nav. This replaced the September 2026 bright "candy"
+design (cream background, mint/royal/gold/peach tints, wavy ribbon
+marquees, circular "Let's Connect" badge) — don't reintroduce those pieces
+without being asked.
 
 All design tokens are CSS custom properties defined once in `:root` at the
 top of `styles.css`. **Always use the existing variables instead of
@@ -145,170 +145,113 @@ a named variable in `:root` rather than inlining a hex code, and say so.
 
 | Variable | Hex | Used for |
 |---|---|---|
-| `--ink` | `#131313` | body text, dark sections (`.section--dark`, footer), primary button hover/fill |
-| `--cream` | `#F4F0EA` | page background |
-| `--sand` | `#E7E2DA` | neutral image placeholder (`.ph`) / card tint (`.bg-sand`) |
-| `--electric` | `#3939FF` | nav bar background, link hover, focus ring, `.section--blue` CTA band, filter-pill active state |
-| `--daredevil` | `#FF5B22` | primary accent: "Let's Connect" badge, orange ribbon, submit button (`.btn--orange`), starburst SVG |
-| `--arctic` | `#AEE6ED` | mint bands (`.section--mint`), mint cards/tiles (`.bg-mint`), contact form panel |
-| `--royal` | `#DBB8FF` | purple bands (`.section--purple`), purple cards (`.bg-royal`) |
-| `--gold` | `#F2BB05` | yellow bands/cards (`.bg-gold`), fact cards, footer link hover |
-| `--peach` | `#FFD9C9` | bento/card tint (`.bg-peach`) |
-| `--periwinkle` | `#C9D4FF` | bento/card tint (`.bg-peri`) |
+| `--black` | `#000000` | page background |
+| `--surface` | `#111111` | panels/cards, footer, mobile drawer |
+| `--surface-2` | `#1A1A1A` | image placeholder base |
+| `--line` | `#2F2F2F` | hairlines, tag/filter outlines, input borders, hero card |
+| `--gray` | `#6D6D6D` | the gray "continuation" half of statements and captions, meta labels |
+| `--gray-light` | `#CACACA` | body copy, nav links, footer links |
+| `--white` | `#FFFFFF` | headlines, the bold lead of statements/captions |
+| `--daredevil` | `#FF5B22` | **the only accent**: buttons, eyebrows, panel numbers, nav dot, active filter, focus ring, starburst, image glows |
+| `--daredevil-dim` | `#7C2A0C` | deep orange for glow gradients |
+| `--nav-glass` | `rgba(47,47,47,.7)` | floating nav pill (with backdrop blur) |
 
-This palette **fully replaced** the previous cobalt/coral/cream palette —
-that palette's variables (`--cobalt`, `--coral`, `--pink`, `--dusty-blue`,
-`--mustard`, `--paper`, `--ink-soft`, `--line`) no longer exist in
-`styles.css`. Don't reintroduce them; if old inline references to them turn
-up anywhere, that's leftover content that needs updating to the current
-token set.
+Keep the palette monochrome + one orange. Don't add a second accent color.
+The previous candy tokens (`--cream`, `--sand`, `--electric`, `--arctic`,
+`--royal`, `--gold`, `--peach`, `--periwinkle`, `--ink`) no longer exist.
 
 ### Typography
 
-- `--display: 'Archivo', sans-serif` — all headings (`.h1`/`.h2`/`.h3`/
-  `.display-xl`), nav brand, ribbon marquee text, tile labels, buttons,
-  card numbers/tags, footer wordmark. Weights 700/800 (this family replaced
-  Sora). Letter-spacing is consistently tight/negative (`-0.02em` to
-  `-0.045em`) — don't loosen it for a "friendlier" heading.
-- `--serif: 'Instrument Serif', Georgia, serif` — italic-only, used via
-  `<em class="serif">` for single emphasized words inside headings
-  (`cohesive`, `not`, `best`, `life`, `Work`, `questions`, `Design Studio`,
-  etc.). Never used for body text or at non-italic style. This family
-  replaced Caveat's role as the site's "human touch" accent — but unlike
-  Caveat, it's used consistently across every page, not sparingly in one
-  spot.
-- `--body: 'Plus Jakarta Sans', sans-serif` — everything else: body copy,
-  ledes, form fields, card text, footer notes. Weights 400–700. This
-  replaced Roboto Serif; there's no longer a separate `--label` font family
-  — small tracked uppercase text (`.eyebrow`, tags, meta labels) now just
-  uses `--body` at small size + letter-spacing + `text-transform: uppercase`
-  at each call site, the same way the old `--label` treatment worked, just
-  without its own font-family variable.
+Loaded from Google Fonts in every page's `<head>`:
+`Archivo` (with the **`wdth` axis, 62–125**), `Instrument Serif`, `Space Mono`.
 
-### Recurring motifs (don't reinvent these — extend them)
+- `--serif: 'Instrument Serif'` — **roman (non-italic) for giant display
+  headlines** (`.display`, `.display--md`, footer wordmark, mobile drawer
+  links), tight `-0.035em` tracking and `.86` line-height. Italic only for
+  the footer's "Design Studio".
+- `--sans: 'Archivo'` — everything else. `.statement` uses it **widened**
+  (`font-stretch: 118%`) at weight 500 with tight negative tracking; the
+  pattern is `<p class="statement"><b>White lead sentence.</b> gray
+  continuation</p>`. `.statement--sm`/`--xs` are smaller sizes. `.h3`,
+  buttons and `.spec__k` numbers also use widened Archivo. Body copy is
+  regular-width Archivo.
+- `--mono: 'Space Mono'` — small uppercase labels only: `.eyebrow` (orange;
+  `.eyebrow--gray` for neutral labels), `.tag`, filter buttons, form
+  labels, placeholder labels, back link, footer bottom line.
 
-- **Wavy ribbon marquee** (`.ribbon`): an SVG `<textPath>` looping via a
-  SMIL `<animate attributeName="startOffset" from="0%" to="-50%"
-  dur="18s" repeatCount="indefinite">`, referencing a shared `<path id="wave">`
-  defined once per page in a hidden `<defs>` block near the top of `<body>`.
-  Duplicate the `<use>`/`<text>`/`<textPath>` block and change the `stroke`/
-  `fill` colors and repeated marquee string per instance — it's not a
-  shared component. **The SVG must scale uniformly** (`width:100%;
-  height:auto`, no `preserveAspectRatio="none"`) or the text glyphs detach
-  from the stroked band. Every page that includes a ribbon also needs the
-  small reduced-motion script (see JS behavior) so the `<animate>` element
-  gets stripped for users who prefer reduced motion — copy that script
-  along with the ribbon, don't add a ribbon without it.
-- **Circular badge** (`.badge`): a solid daredevil-orange circle, used once
-  on the Home hero ("Let's Connect" → Contact). Not a repeated pill-badge
-  system like the previous design's dotted badges — there's only one on
-  the whole site.
-- **Nav social icon** (`.nav__social`, and `.nav-drawer__social` inside the
-  mobile drawer): a white inline-SVG Instagram glyph (the Feather/Lucide
-  rounded-square-camera icon, `stroke="currentColor"`, no fill) at the far
-  right of the nav bar, linking to `https://instagram.com/amandaloftisdesign`
-  — **a placeholder handle**, swap for Amanda's real Instagram URL before
-  launch. Sits inside `.nav__right` alongside `.nav__links` on desktop, and
-  is duplicated at the bottom of the mobile drawer (see JS behavior below)
-  since the drawer replaces `.nav__right` entirely at narrow widths — update
-  both copies of the icon/link together, they're not shared markup.
-- **Platform badge row** (`.platform-row`/`.platform-badge`): a "Built with"
-  label + pill row (currently reading Wix / Squarespace / Framer) inside
-  Services' closing blue CTA band, reusing the translucent-chip look from
-  `.card__tags`. These are plain text pills, not real brand logo marks —
-  swap in actual SVG logos if/when that's wanted, but don't hand-draw
-  approximations of the brand marks themselves.
-- **Bento / numbered cards** (`.card`, `.bg-*`): rounded, flat-color cards
-  used for "What I bring" (Home) and the 4 numbered services (Services).
-  Tints rotate through `.bg-mint/.bg-royal/.bg-gold/.bg-peach/.bg-sand/.bg-peri`
-  — no card should reuse an adjacent card's tint in the same grid.
-- **Project tiles** (`.tile`): Home's "Recent Projects" preview — an image
-  placeholder with a translucent-ink label pinned bottom-left, hover tints
-  the background royal. Distinct from `.work-card`, the fuller card used on
-  `work.html` itself (image + tag pills + title + blurb).
-- **Photo hero** (`.photo-hero`): a full-bleed sand placeholder band used
-  on Services (bottom-left aligned text) and Contact (centered text). The
-  project detail pages don't use `.photo-hero` — they use a plain `.section`
-  + a large `.ph` block instead, since they need a back-link and tag row
-  above the image.
-- **Starburst** (`.star`): a 16-point orange SVG asterisk on About, spinning
-  40s linear infinite. Respects `prefers-reduced-motion` via a CSS rule in
-  `styles.css` (`.star { animation: none }` under the media query) — no JS
-  needed for this one, unlike the ribbons.
-- **Facts row** (`.facts`/`.fact`): 3 flat gold cards, used once on About.
+### Recurring components (reuse — don't reinvent)
+
+- **Floating nav** (`.nav`): fixed pill 8px from the top, glass background,
+  orange-dot serif brand "Amanda Loftis®" at left; links, Instagram icon
+  (`.nav__social`, placeholder handle `instagram.com/amandaloftisdesign` —
+  swap before launch) and a small orange "Let's talk" button at right. The
+  current page gets `aria-current="page"` and an orange dot. `<main>` has
+  64px top padding to clear it.
+- **Statement** (`.statement`) and **caption** (`.caption`): both use the
+  white-`<b>`-lead + gray-continuation pattern.
+- **Eyebrow** (`.eyebrow`): tiny orange mono label above most sections.
+- **Panels** (`.panel`): dark `#111` cards with 22px radius. `.panel--dots`
+  adds the 12px dot-grid texture; `.panel__num` is the orange mono "01".
+  Alternate dotted/plain panels within a grid.
+- **Spec cards** (`.panel.spec` + `.spec__k`/`.spec__v`): eyebrow + huge
+  wide number + label (About facts).
+- **Image placeholders** (`.ph`): dark gradient boxes with a mono
+  "IMAGE"/"PORTRAIT" label bottom-left. Modifiers: `.ph--glow` (orange
+  radial glow — the signature look), `.ph--dots`, `.ph--hero` (tall hero),
+  `.ph--wide` (16:10), `.ph--tall` (4:5). When real photography is ready,
+  replace with `<img>` at the same radius using `object-fit: cover`.
+- **Figure** (`.figure`): media + caption + optional `.tags`, used for work
+  cards and project previews.
+- **Buttons** (`.btn`): orange, 8px radius, widened Archivo, auto-appended
+  `↗` arrow, orange glow on hover. `.btn--sm`, `.btn--ghost` variants.
+- **Tags** (`.tags` > `.tag`): outlined mono pills. Platform names
+  (Wix/Squarespace/Framer) are plain text tags, not hand-drawn logo marks.
+- **Text link** (`.text-link`): underlined secondary link ("View the
+  services", "All work", email).
+- **Starburst** (`.star`): 16-point orange SVG on About, spinning 40s;
+  disabled under `prefers-reduced-motion` in CSS.
+- **Footer** (`.footer`): rounded `#111` panel inset from the page edges,
+  big serif wordmark, Pages/Elsewhere link columns, mono bottom line.
+
+Layout helpers: `.section` (big top padding; `--tight` variant), `.stack`
+(`--center`), `.split` + `.split__aside`, `.row-between`, and `.grid`
+(`--2`/`--3`/`--4`, all `auto-fit`/`minmax`).
 
 ## JS behavior
 
-All JS is inline in a closing `<script>` tag, and **pages don't all carry
-the same script** — don't assume every page has the same JS available.
+All JS is inline per page. Every page carries:
 
-- **Reduced-motion guard for ribbons**: every page with a `.ribbon` SVG
-  (`index.html`, `services.html`, `about.html`) carries this snippet, which
-  removes the SMIL `<animate>` elements (freezing the marquee at its start
-  position) when the user prefers reduced motion:
-  ```html
-  <script>
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('animate').forEach(function (el) { el.remove(); });
-  }
-  </script>
-  ```
-  `work.html`, `contact.html`, and the `work/*.html` detail pages have no
-  ribbons and don't carry this script.
-- **Work-page filtering** (`work.html` only): clicking a `.filters span`
-  pill sets `aria-pressed` on the clicked pill (clearing the others) and
-  toggles the `hidden` attribute on each `.work-card` by matching the
-  pill's `data-filter` against the card's space-separated `data-tags`. This
-  is real, working filtering — not the "visual only" placeholder from the
-  original design handoff.
+- A one-liner in `<head>`: `document.documentElement.classList.add('js')`.
+- **Mobile nav drawer**: below 680px CSS hides `.nav__right` and shows
+  `.nav__toggle`. `#navDrawer` and `#navScrim` sit as siblings right after
+  `</header>`. Same IDs everywhere (`navToggle`, `navDrawer`, `navScrim`,
+  `navDrawerClose`); the script opens/closes on toggle, close button, scrim,
+  link click and Escape, and locks body scroll while open. **When changing
+  nav links, update the desktop `.nav__links`, the `.nav-drawer__links`
+  and the footer link column on every page** — they're not shared markup.
+- **Scroll reveal**: elements with `.reveal` fade up when they enter the
+  viewport (IntersectionObserver adds `.is-in`). CSS only hides them when
+  `html.js` is present **and** `prefers-reduced-motion: no-preference`, so
+  content is always visible without JS or with reduced motion.
+
+Page-specific:
+
+- **Work filtering** (`work.html` only): clicking a `#filters button` sets
+  its `aria-pressed="true"` (clearing the others) and toggles `hidden` on
+  each `.work-card` by matching `data-filter` against its `data-tags`.
 - **Contact form**: `contact.html`'s `<form onsubmit="return false">` is
-  **not wired to a backend** and has no JS handler at all — submitting just
-  no-ops. `required` is set on Name, Email, and Message for baseline
-  browser-native validation. If asked to make the form actually send
-  somewhere, replace the `onsubmit="return false"` with a real submit
-  handler (e.g. point it at Formspree/Basin, or add a `fetch()` call to a
-  backend).
-- **Mobile nav drawer** (every page): below 680px, CSS hides `.nav__right`
-  (the links + Instagram icon) and shows `.nav__toggle`, a hamburger button.
-  A `#navDrawer` panel (fixed, right-aligned, slides in via
-  `transform: translateX()`) and a `#navScrim` backdrop live as siblings
-  right after `</header>` — not nested inside the sticky `<header>` — so
-  they can cover the full viewport height regardless of scroll position.
-  Each page repeats this identical inline script (same IDs everywhere:
-  `navToggle`, `navDrawer`, `navScrim`, `navDrawerClose`):
-  ```html
-  <script>
-  (function () {
-    var toggle = document.getElementById('navToggle');
-    var drawer = document.getElementById('navDrawer');
-    var scrim = document.getElementById('navScrim');
-    var closeBtn = document.getElementById('navDrawerClose');
-    function openDrawer() { /* adds .open to drawer+scrim, locks body scroll */ }
-    function closeDrawer() { /* removes .open, unlocks body scroll */ }
-    toggle.addEventListener('click', openDrawer);
-    closeBtn.addEventListener('click', closeDrawer);
-    scrim.addEventListener('click', closeDrawer);
-    drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
-  })();
-  </script>
-  ```
-  The drawer duplicates the same nav links (with the same `aria-current`)
-  and the Instagram icon found in `.nav__right` — **when changing nav
-  links, update both the desktop `.nav__links` copy and the
-  `.nav-drawer__links` copy on every page**, they're not shared markup.
-  This is deliberately re-added on top of the original design handoff,
-  which had no hamburger at all (nav links just wrapped via flex-wrap);
-  the 680px breakpoint that drives it (in `styles.css`) is the **one
-  fixed `@media` breakpoint on the site** — see the note in "Conventions
-  for making changes" below.
+  **not wired to a backend** — submitting no-ops. To make it send, replace
+  that with a real handler (Formspree/Basin, or `fetch()` to a backend).
+
+There are no ribbons or SMIL animations any more, so the old
+"strip `<animate>` for reduced motion" script is gone.
 
 ## Content that is still placeholder
 
 Be aware these are illustrative, not real, and shouldn't be presented to
 end users as final without checking with the person running this project:
 
-- **Every image on every page** is a plain `.ph`/`.photo-hero` placeholder
+- **Every image on every page** is a plain `.ph` placeholder
   box — there is no real photography or portrait anywhere on the current
   site.
 - The 6 project names and one-line blurbs on `work.html` (Piedmont Global
@@ -334,14 +277,14 @@ end users as final without checking with the person running this project:
   `<link>` to it (with the correct relative path for their folder depth),
   not copy styles inline. JS is still fine inline per-page at this
   project's size.
-- Reuse existing CSS custom properties for color; reuse `.btn`/`.card`/
-  `.tile`/`.ph`/`.badge`/`.ribbon` classes and the color-tint modifiers
-  (`.bg-*`, `.section--*`) for anything that matches those patterns rather
-  than writing new one-off styles.
+- Reuse existing CSS custom properties for color; reuse `.statement`/
+  `.caption`/`.eyebrow`/`.panel`/`.ph`/`.figure`/`.btn`/`.tag` and the
+  layout helpers (`.section`, `.stack`, `.split`, `.grid--*`) rather than
+  writing new one-off styles or inline styles.
 - New pages under `work/` should follow the existing template: same
   `<head>` font links, same `<header>`/`<footer>` markup with paths
   adjusted for the folder depth, same back-link/tags/hero/gallery/write-up/
-  meta/CTA structure. Don't invent a different page shell per project.
+  meta/CTA structure, and `.reveal` on the blocks. Don't invent a different page shell per project.
 - This design is fully fluid (`clamp()` for type/spacing, `auto-fit`/
   `minmax()` grids, `flex-wrap` everywhere) — **the only fixed `@media`
   breakpoint in `styles.css` is the 680px one that swaps the nav between
@@ -351,8 +294,8 @@ end users as final without checking with the person running this project:
   the nav. Verify layout changes at ~375px, ~768px, and ~1440px, and also
   check just above/below 680px specifically when touching the nav.
 - Respect the existing `prefers-reduced-motion` handling (the CSS rule for
-  `.star`, and the inline-script pattern for ribbons) — don't add new
-  animations without accounting for both.
+  `.star`, and the reveal styles that only apply under
+  `no-preference`) — don't add new animations without accounting for it.
 
 ## Design inspiration references
 
@@ -360,9 +303,9 @@ A reference board of 4 outside design examples, kept here for future design
 decisions — palettes, type pairings, and layout motifs to pull from when
 asked to design something new or push an existing design further. **None of
 this is a spec for the current site** — it's a menu, not a directive. (The
-current redesign already leans on several of these throughlines — oversized
-display type, a candy-bright pop palette on a neutral base, and circular
-badge/sticker accents — more directly than the previous iteration did.)
+current dark design keeps two of these throughlines — oversized display
+type and small tracked labels — but deliberately drops the candy palette
+and sticker/collage motifs.)
 
 ### 1. Brand swatch cards (style-guide reference)
 
@@ -432,6 +375,6 @@ principles rather than any one palette:
 
 If asked to design something new in this project (a new section, a new
 one-off page, a social template, etc.), these are the references to pull
-texture and confidence from — while keeping the current Archivo/Instrument
-Serif/Plus Jakarta Sans type pairing and electric/daredevil/arctic/royal/
-gold candy palette documented above.
+texture and confidence from — while keeping the current Instrument Serif/
+Archivo/Space Mono type pairing and black + daredevil-orange palette
+documented above.
