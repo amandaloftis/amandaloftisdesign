@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mediavine Design System — Amanda Loftis</title>
+<meta name="description" content="When my design team began working on early designs for Mediavine’s updated analytics dashboard, I knew we’d need to rethink the way we structured and organ">
+<meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">Amanda Loftis</a>
+  <div class="nav__right">
+    <nav class="nav__links" aria-label="Main">
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="nav__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a class="btn btn--sm" href="mailto:amanda@amandaloftis.io">Get in touch</a>
+  </div>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">&times;</button>
+  <nav class="nav-drawer__links" aria-label="Mobile">
+    <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+  </nav>
+  <a class="nav-drawer__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  </a>
+</div>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main>
+<section class="section section--tight">
+    <div class="stack reveal">
+      <a class="back-link" href="../projects.html">&larr; See all projects</a>
+      <div class="chips"><a href="../projects.html#case-studies">Case Studies</a></div>
+      <h1 class="display display--md" style="max-width:16ch">Mediavine Design System</h1>
+      <p class="statement statement--sm" style="max-width:38ch"><b>When my design team began working on early designs for Mediavine’s updated analytics dashboard, I knew we’d need to rethink the way we structured and organized our design library in Figma. This was primarily, because the dashboard was being completely rebuilt and the engineers were no longer utilizing the legacy components we used for our previous dashboard. Essentially, this was our opportunity to start fresh and create a design system that we’d love using.</b></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(32px,4vw,56px)">
+    <div class="stage reveal"><img class="img" src="../images/portfolio/kQKM0JdbQzx5VbFhsfqOxiXJ7w.webp" width="1600" height="900" alt="Mediavine Design System"></div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(40px,5vw,80px)">
+    <div class="prose">
+      <h3>I had three main guiding principles for our design system:</h3>
+      <ol>
+        <li>It should be easy for engineers to follow</li>
+        <li>It should be easy to add to and edit over time</li>
+        <li>It should only include the components we actually use and need</li>
+      </ol>
+      <p>I’m proud of the system we built together (myself and the three senior designers on my team) and with our careful planning it became the cornerstone of the entire dashboard project. Below I’ll walk through some of the key decisions I made and explain what made this design system such a success.</p>
+      <h3>The Foundation:</h3>
+      <p>We started by leveraging the <a href="https://minimals.cc/" target="_blank" rel="noopener">Minimal UI</a> React kit for two reasons:</p>
+      <ol>
+        <li>It came with a Figma file of components we could start with which was essential considering this dashboard project had a very tight deadline.</li>
+        <li>It’s based on MUI so our engineers could easily get set up without having to build custom components from scratch.</li>
+      </ol>
+      <p>This kit allowed us to establish our own style and theming while taking advantage of the patterns and accessibility standards set up by MUI. And, again, since we were working with a very tight deadline, we didn’t have extra time to spare designing custom components and putting them in front of stakeholders for approval. We also chose to use the Phosphor icon pack since it had more than enough icons for the project and the styling most closely matched our other brand elements.</p>
+      <p>Finally, for the charts and graphs we used throughout the analytics screens, we used the <a href="https://github.com/plouc/nivo" target="_blank" rel="noopener">Nivo</a> library which made building the graphs simple for the engineers, and easy for us to style. No need to reinvent the wheel for a line graph or pie chart.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/BCmNtX97xLqGrePrOKyeGPW4oE.webp" width="1600" height="1339" alt="Mediavine Design System image" loading="lazy" decoding="async"></figure></div>
+
+    <div class="prose">
+      <h3>Setting Up The File</h3>
+      <p>Once we were at the stage of setting up our design system, we had already gotten buy-in on our initial screens and had a pretty good idea of what we were going to be building for our users. That made it easy to identify which components from the Minimal UI kit we’d actually need and which ones we could omit (for now).</p>
+      <p>We started by creating a new Figma file and making pages for each component type we wanted to copy over. From there, we edited the fonts, colors, border radius, and other styling to match our brand identity. We tested each color for accessibility and also made sure to include dark mode theming as well.</p>
+      <p>Separating each component into its own page made navigating such a large file actually manageable. Believe it or not, I’ve seen systems that have components all on one page and not only does the file take an eternity to load, but it also makes it challenging to find what you need. Save yourself the headache and break them out from the beginning.</p>
+      <p>Also, every component's state was clearly defined including shadow effects, hover states, and text sizes based on responsiveness. Because things were so well-defined, our engineers rarely had to come back to us with questions about a component's styling or behavior.</p>
+    </div>
+
+    <div class="prose-media media-grid">
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/plGMBlKaMHLZHTtwSYj4UTg8XY.webp" width="1600" height="955" alt="Mediavine Design System image" loading="lazy" decoding="async"></figure>
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/z1CAHNk29vfEHJGa2Mz8ZS1YRs.webp" width="1600" height="1084" alt="Mediavine Design System image" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="prose">
+      <h3>Best Practices</h3>
+      <p>I strongly believe in the value of an atomic design system, so in addition in creating individual components (Ex. buttons, text fields, etc.), we also created patterns that leveraged them (Ex. modals, date pickers, tables), and even entire screens which we called “skeletons” that served both as examples of how the pieces should all fit together, and also as starting points when the team wanted to build off of an existing design. Most importantly, every single element in these skeletons and patterns were global components that could be swapped out, added, or removed as needed. No one-off or detached designs here!</p>
+      <p>If we ever came across a use-case where only a custom component would work, we would first make sure that it followed all of the same styles as the rest and that it got documented in Figma along with the other components. There were only a handful of these (Ex. robust date picker, a widget to track your earnings, marketing banners), but because of the way they were cohesively incorporated into the system, you would never know they weren’t a part of the original set.</p>
+      <h3>Integrating with Engineering</h3>
+      <p>Arguably the most important part of any design system is how easily it can be utilized by the engineers building the designs. In our case, I worked with our front-end team to ensure every color, typography style, and css class was well-defined and consistent so we could be sure the components engineering built would match our designs (a big issue in our legacy system). <br><br>Eventually, our design system was so consistent and well-built, that our engineering teams were able to translate certain screens of our legacy dashboard to our new dashboard without the Design team having to first create the screens. Of course, we would always review the work and check for usability, but overall this system allowed us to work quickly and seamlessly with our engineers. It was a win-win all around!</p>
+    </div>
+
+    <div class="prose-media media-grid">
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/DRfbgaPZmezF60C3s3oHayJUo.webp" width="1600" height="1120" alt="Mediavine Design System image" loading="lazy" decoding="async"></figure>
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/kNKgqnCsQ9AC71wmxxzTopes1U.webp" width="1600" height="890" alt="Mediavine Design System image" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="prose">
+      <h3>Conclusion</h3>
+      <p>This design system has now been used for over two years and you can see it in action within the live <a href="https://www.mediavine.com/blog/mediavine-dashboard-rebuilt/" target="_blank" rel="noopener">Mediavine Dashboard.</a> Overall, I'm very happy with the system, specifically how it's organized, how our engineers have been able to utilize it, and how flexible it has been to work on. There are a few things I would change if I were to start the project over that I'll highlight below.</p>
+      <h3>What I would do differently:</h3>
+      <ol>
+        <li>The system was created pre-Figma Slots, but if I were to do a big update or start over, I would make it with Slots so the patterns are even more interchangeable. <br><br></li>
+        <li>Figma Make also wasn't widely available at the time this system was created. Once we did have access to it, though, we would use Make to create interactive prototypes for our engineers and stakeholders to show specific behaviors and user interactions we wanted to achieve. <br><br></li>
+        <li>I would have loved a better system for letting our engineers know what changes had been made to components so they could maintain parity with the current build. Now, Figma MCP + Claude Code can call out those diffs, but at the time, we were manually highlighting changes and annotating them for our devs.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <nav class="project-nav" aria-label="More projects">
+      <a href="incorporating-ai-in-the-design-process.html"><span class="eyebrow">&larr; Previous</span><span class="h3">Incorporating AI in the Design Process</span></a>
+      <a href="doodle-font.html"><span class="eyebrow">Next &rarr;</span><span class="h3">Doodle Font</span></a>
+    </nav>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="stack" style="gap:16px">
+      <div class="footer__word">Amanda Loftis</div>
+      <p class="caption" style="max-width:40ch">Amanda is a <b>product design leader</b> who specializes in applying cognitive behavioral science to UI design.</p>
+      <a class="text-link" href="mailto:amanda@amandaloftis.io">amanda@amandaloftis.io</a>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Pages</span>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resume.html">Experience</a>
+        <a href="../process.html">Process</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/amanda.helene.loftis/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://dribbble.com/amandaloftis" target="_blank" rel="noopener">Dribbble</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Product design leader</span>
+    <span>Greensboro, NC &middot; &copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var scrim = document.getElementById('navScrim');
+  var closeBtn = document.getElementById('navDrawerClose');
+  function openDrawer() {
+    drawer.classList.add('open');
+    scrim.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    scrim.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+})();
+</script>
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

@@ -3,158 +3,190 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Amanda Loftis Design Studio — brand, web &amp; illustration</title>
-<meta name="description" content="A one-person studio in Greensboro, NC building brand systems, websites, illustration and copy that all fit together.">
+<title>Amanda Loftis — Product design leader</title>
+<meta name="description" content="Amanda Loftis is a product design leader who specializes in applying cognitive behavioral science to UI design.">
+<meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <path id="wave" d="M0 70 C 200 46, 400 94, 600 70 S 1000 46, 1200 70"></path>
-  </defs>
-</svg>
-
 <header class="nav">
   <a class="nav__brand" href="index.html">Amanda Loftis</a>
   <div class="nav__right">
-    <nav class="nav__links">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="work.html">Work</a>
-      <a href="services.html">Services</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Experience</a>
+      <a href="process.html">Process</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
     </nav>
-    <a class="nav__social" href="https://instagram.com/amandaloftisdesign" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    <a class="nav__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </a>
+    <a class="btn btn--sm" href="mailto:amanda@amandaloftis.io">Get in touch</a>
   </div>
   <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
-    <span></span><span></span><span></span>
+    <span></span><span></span>
   </button>
 </header>
 
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
   <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">&times;</button>
-  <nav class="nav-drawer__links">
+  <nav class="nav-drawer__links" aria-label="Mobile">
     <a href="index.html" aria-current="page">Home</a>
-    <a href="work.html">Work</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Experience</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
   </nav>
-  <a class="nav-drawer__social" href="https://instagram.com/amandaloftisdesign" target="_blank" rel="noopener" aria-label="Instagram">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  <a class="nav-drawer__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
   </a>
 </div>
 <div class="nav-scrim" id="navScrim"></div>
 
 <main>
-  <section class="hero">
-    <h1 class="display-xl">DESIGNED FOR YOU</h1>
-    <div class="hero__split">
-      <div class="ph ph--royal">IMAGE</div>
-      <div class="ph">IMAGE</div>
+<section class="hero section--tight" style="padding:clamp(24px,3vw,48px) var(--gutter) 0">
+    <div class="stack reveal">
+      <span class="eyebrow">Product design leader &middot; Greensboro, NC</span>
+      <h1 class="display">Amanda Loftis</h1>
+      <p class="statement" style="max-width:26ch;margin-top:8px"><b>Product design leader</b> who specializes in applying cognitive behavioral science to UI design.</p>
+      <div class="chips" style="margin-top:8px"><a href="projects.html#case-studies">Case Studies</a><a href="projects.html#workshops">Workshops</a><a href="projects.html#fonts">Fonts</a><a href="projects.html#print">Print</a><a href="projects.html#branding">Branding</a><a href="projects.html">See all</a></div>
     </div>
-    <a class="badge" href="contact.html">Let&rsquo;s<br>Connect</a>
-    <div class="ribbon-slot--hero">
-      <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
-        <use class="ribbon__band" href="#wave" style="stroke:#AEE6ED"></use>
-        <text class="ribbon__text" fill="#131313" dominant-baseline="middle">
-          <textPath href="#wave" startOffset="0%">
-            BRAND SYSTEMS ✳ WEBSITES ✳ ILLUSTRATION ✳ COPY ✳ BRAND SYSTEMS ✳ WEBSITES ✳ ILLUSTRATION ✳ COPY ✳
-            <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
-          </textPath>
-        </text>
-      </svg>
-    </div>
+    <a class="stage reveal" href="projects/redesigning-the-mediavine-publisher-dashboard.html" style="margin-top:clamp(32px,4vw,64px)" aria-label="Redesigning the Mediavine Publisher Dashboard">
+      <img class="img" src="images/portfolio/y9W0Nk96xIEdrts5WN8lkvLz8.webp" width="1600" height="900" alt="The redesigned Mediavine Publisher Dashboard">
+    </a>
   </section>
 
-  <section class="section section--center">
-    <span class="eyebrow">What I do here</span>
-    <h2 class="h2" style="max-width:20ch;font-size:clamp(28px,4.2vw,52px)">Imagine your entire digital presence <span class="mark-gold">managed</span>, <span class="mark-mint">polished</span>, and <em class="serif mark-royal">cohesive</em></h2>
-    <p class="lede">Brand systems, websites, illustration and copy built by one person who sees the whole picture. Nothing gets handed off and lost between the identity, the site and the words.</p>
-    <a class="btn btn--royal" href="services.html">View the services</a>
-  </section>
-
-  <section class="split">
-    <div class="split__media ph">IMAGE</div>
-    <div class="split__copy">
-      <span class="eyebrow eyebrow--mint">Just having a website doesn&rsquo;t cut it anymore.</span>
-      <h2 class="h2" style="max-width:18ch">You need a <em class="serif">comprehensive</em> brand strategy</h2>
-      <p class="body body--mint" style="max-width:46ch">In 2026, people are using the internet differently than ever before. Between social media, AI search results, and word of mouth, having a cohesive digital presence is essential to gain brand trust and to meet users where they are.</p>
-      <a class="btn btn--gold" style="align-self:flex-start" href="contact.html">See how I can help</a>
+  <section class="section">
+    <div class="row-between reveal" style="margin-bottom:clamp(24px,3vw,40px)">
+      <div class="stack">
+        <span class="eyebrow">Featured work</span>
+        <p class="statement statement--sm"><b>Case studies and workshops</b> on product design, accessibility and the psychology behind good UI.</p>
+      </div>
+      <a class="text-link" href="projects.html">See all projects</a>
+    </div>
+    <div class="work-grid">
+      <article class="work-card figure reveal" data-tags="case-studies">
+        <a href="projects/redesigning-the-mediavine-publisher-dashboard.html" aria-label="Redesigning the Mediavine Publisher Dashboard"><div class="thumb"><img class="img" src="images/portfolio/y9W0Nk96xIEdrts5WN8lkvLz8.webp" width="1600" height="900" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/redesigning-the-mediavine-publisher-dashboard.html">Redesigning the Mediavine Publisher Dashboard</a></b></p>
+        <div class="tags"><span class="tag">Case Studies</span></div>
+      </article>
+      <article class="work-card figure reveal" data-tags="case-studies">
+        <a href="projects/incorporating-ai-in-the-design-process.html" aria-label="Incorporating AI in the Design Process"><div class="thumb"><img class="img" src="images/portfolio/Q0Os5OgwverLivGi16V623GNQ.webp" width="1600" height="900" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/incorporating-ai-in-the-design-process.html">Incorporating AI in the Design Process</a></b></p>
+        <div class="tags"><span class="tag">Case Studies</span></div>
+      </article>
+      <article class="work-card figure reveal" data-tags="workshops">
+        <a href="projects/accessible-design-101.html" aria-label="Accessible Design 101"><div class="thumb"><img class="img" src="images/portfolio/QUGJf4S2zrdHBhkPUg5zkwbbJbI.webp" width="1600" height="900" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/accessible-design-101.html">Accessible Design 101</a></b></p>
+        <div class="tags"><span class="tag">Workshops</span></div>
+      </article>
+      <article class="work-card figure reveal" data-tags="workshops">
+        <a href="projects/understanding-gestalt-principles-of-visual-perception.html" aria-label="Understanding Gestalt Principles of Visual Perception"><div class="thumb"><img class="img" src="images/portfolio/JiBkhFN4oHGKCaZDdPMtaDqYc.webp" width="1600" height="900" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/understanding-gestalt-principles-of-visual-perception.html">Understanding Gestalt Principles of Visual Perception</a></b></p>
+        <div class="tags"><span class="tag">Workshops</span></div>
+      </article>
+      <article class="work-card figure reveal" data-tags="workshops">
+        <a href="projects/effective-micro-copy.html" aria-label="How to Write Effective Micro Copy"><div class="thumb"><img class="img" src="images/portfolio/dhBqJHICsYh5mu2rjwdDhRQeuA.webp" width="1600" height="915" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/effective-micro-copy.html">How to Write Effective Micro Copy</a></b></p>
+        <div class="tags"><span class="tag">Workshops</span></div>
+      </article>
+      <article class="work-card figure reveal" data-tags="workshops">
+        <a href="projects/behavioral-science-workshop.html" aria-label="Behavioral Science Workshop"><div class="thumb"><img class="img" src="images/portfolio/JP57dkfHOTNAs4rOMHqs870VvQ.webp" width="1600" height="960" alt="" loading="lazy" decoding="async"></div></a>
+        <p class="caption"><b><a href="projects/behavioral-science-workshop.html">Behavioral Science Workshop</a></b></p>
+        <div class="tags"><span class="tag">Workshops</span></div>
+      </article>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="h2" style="text-align:center;margin-bottom:clamp(28px,4vw,48px);font-size:clamp(28px,4vw,48px)">What I <em class="serif">bring</em></h2>
-    <div class="bento">
-      <div class="card bg-mint"><h3 class="h3">Curated social feeds</h3><p>A grid that looks like the rest of your brand, planned in advance instead of posted in a panic.</p></div>
-      <div class="card bg-royal"><h3 class="h3">A human-made website</h3><p>Designed and built by the same person, editable by you, structured so search engines understand it.</p></div>
-      <div class="card bg-gold"><h3 class="h3">Custom illustration</h3><p>Drawings, icons and imagery so your site isn&rsquo;t furnished with the same stock photos as everyone else.</p></div>
-      <div class="card bg-peach"><h3 class="h3">Copy that sounds like you</h3><p>Engaging words that carry your voice across the site, the feed and the inbox.</p></div>
-      <div class="card bg-sand"><h3 class="h3">Printed materials</h3><p>Menus, flyers and swag that match the digital work instead of fighting it.</p></div>
-      <div class="card bg-peri"><h3 class="h3">SEO &amp; metadata</h3><p>Tailored titles, structure and tags that help the right users actually find you.</p></div>
+    <div class="stack reveal" style="margin-bottom:clamp(24px,3vw,40px)">
+      <span class="eyebrow">Kind words</span>
+      <p class="statement statement--sm"><b>What it&rsquo;s like</b> to work with Amanda.</p>
     </div>
-  </section>
-
-  <div class="ribbon-slot--above">
-    <svg class="ribbon" viewBox="0 0 1200 140" aria-hidden="true">
-      <use class="ribbon__band" href="#wave" style="stroke:#F2BB05"></use>
-      <text class="ribbon__text" fill="#131313" dominant-baseline="middle">
-        <textPath href="#wave" startOffset="0%">
-          ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳ ONE PERSON, START TO FINISH ✳
-          <animate attributeName="startOffset" from="0%" to="-50%" dur="18s" repeatCount="indefinite"></animate>
-        </textPath>
-      </text>
-    </svg>
-  </div>
-
-  <section class="section section--dark section--center" style="padding-top:clamp(64px,8vw,110px)">
-    <div class="ph ph--dark" style="width:100%;max-width:400px;height:clamp(220px,24vw,320px);border-radius:18px">IMAGE</div>
-    <span class="eyebrow eyebrow--gold">BEYOND THE BUILD</span>
-    <h2 class="h2" style="max-width:18ch">Already have a site? I can help with <em class="serif">that</em> too.</h2>
-    <p class="body body--dark" style="max-width:46ch">I help with all the logistics that come with building and maintaining a digital presence, not just the design part. Need help moving to a new platform? Building forms? Setting up a domain? Connecting email? I&rsquo;ve got you covered.</p>
-    <p class="body body--dark" style="font-size:12.5px;color:#a8a29a;max-width:46ch">Sites built on <strong style="color:#e6e2dc">Wix</strong>, <strong style="color:#e6e2dc">Squarespace</strong>, and <strong style="color:#e6e2dc">Framer</strong> so you can manage your own content &mdash; no developer needed.</p>
-    <a class="btn btn--mint" href="contact.html">Get in touch</a>
+    <div class="quotes">
+      <figure class="panel quote reveal" style="margin:0">
+        <blockquote>Working alongside Amanda for over three years gave me a front-row seat to what exceptional UX leadership looks like in practice. As Director of UX at Mediavine, she was instrumental in helping our teams build a shared workflow from the ground up. She brought clarity, collaboration, and a genuine partnership mindset to every stage of that process.</blockquote>
+        <figcaption class="quote__who"><img class="img" src="images/portfolio/crhbK2OwrLyN80WwnxhZGHLq8fM.webp" width="800" height="800" alt="Kenrika Mazuch" loading="lazy" decoding="async"><div>Kenrika Mazuch<span>Director of Project Management at Mediavine</span></div></figcaption>
+      </figure>
+      <figure class="panel quote panel--blue reveal" style="margin:0">
+        <blockquote>Amanda created an environment that was genuinely creative, thoughtful, and safe to explore ideas. She has a rare ability to balance empathy with direction, giving her team the space to think big while still guiding us toward real, shippable outcomes. Under her leadership, our small team was able to research, design, and launch a completely reimagined product used by thousands of people.</blockquote>
+        <figcaption class="quote__who"><img class="img" src="images/portfolio/wFFQ5rLAlzartc8bRg2Ntv7D51k.webp" width="418" height="418" alt="Matthew Winger" loading="lazy" decoding="async"><div>Matthew Winger<span>Sr. Product Designer at Mediavine</span></div></figcaption>
+      </figure>
+      <figure class="panel quote reveal" style="margin:0">
+        <blockquote>Amanda not only makes her team better &mdash; she makes other teams better. Whether it was guiding junior PMs through a session on user-centered design or taking the initiative to include our brand design team in trainings, she is an expert at exerting influence over stakeholders without authority.</blockquote>
+        <figcaption class="quote__who"><img class="img" src="images/portfolio/TRAP5PpqACa6ihRujZqKNRodzrU.webp" width="800" height="800" alt="Matt Grisafi" loading="lazy" decoding="async"><div>Matt Grisafi<span>Former VP of Product at Mediavine</span></div></figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section">
-    <div class="cta-row" style="align-items:baseline;margin-bottom:clamp(24px,3vw,40px)">
-      <h2 class="h2" style="font-size:clamp(30px,4.4vw,54px)">Recent <em class="serif">Projects</em></h2>
-      <a href="work.html" style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-bottom:1.5px solid #131313">All work</a>
+    <div class="row-between reveal" style="margin-bottom:clamp(20px,2.5vw,32px)">
+      <div class="stack">
+        <span class="eyebrow">Experience</span>
+        <p class="statement statement--sm"><b>Nearly a decade</b> leading design across product, brand and content.</p>
+      </div>
+      <a class="text-link" href="resume.html">See all</a>
     </div>
-    <div class="tiles">
-      <a class="tile" href="work/piedmont-global-preschool.html"><span class="ph">IMAGE</span><span class="tile__label">Piedmont Global Preschool</span></a>
-      <a class="tile" href="work/fluree.html"><span class="ph">IMAGE</span><span class="tile__label">Fluree</span></a>
-      <a class="tile" href="work/date-night-questions.html"><span class="ph">IMAGE</span><span class="tile__label">Date Night Questions</span></a>
-      <a class="tile" href="work/sable-and-fen.html"><span class="ph">IMAGE</span><span class="tile__label">Sable &amp; Fen</span></a>
+    <div class="roles reveal">
+      <a class="role" href="resume.html#mediavine"><span class="role__title">Director of User Experience</span><span class="role__org">Mediavine</span><span class="role__years">2022&ndash;2026</span></a>
+      <a class="role" href="resume.html#fluree"><span class="role__title">Director of User Experience and Brand</span><span class="role__org">Fluree</span><span class="role__years">2019&ndash;2022</span></a>
+      <a class="role" href="resume.html#andmore"><span class="role__title">Digital Content Manager</span><span class="role__org">Andmore</span><span class="role__years">2018&ndash;2019</span></a>
+      <a class="role" href="resume.html#elon"><span class="role__title">Digital Content Strategist</span><span class="role__org">Elon University</span><span class="role__years">2017&ndash;2018</span></a>
     </div>
   </section>
 
-  <section class="section section--purple section--center">
-    <h2 class="h2" style="max-width:22ch;font-size:clamp(24px,3.2vw,40px)">Tell me about your project so I can make your vision come to <em class="serif">life</em>.</h2>
-    <a class="btn btn--ink" href="contact.html">Reach out</a>
+  <section class="section">
+    <div class="stack reveal" style="margin-bottom:clamp(24px,3vw,40px)">
+      <span class="eyebrow">Learn more</span>
+    </div>
+    <div class="grid grid--3">
+      <a class="figure reveal" href="resume.html#presentations"><div class="thumb" style="aspect-ratio:4/5"><img class="img" src="images/portfolio/n1Om1Vx3zlXZoN6a3xu40RtyyQ.webp" width="1121" height="1600" alt="Amanda presenting at a conference" loading="lazy" decoding="async"></div><p class="caption"><b>Presentations.</b> Talks and workshops at MVCon, Connect.Tech and more.</p></a>
+      <a class="figure reveal" href="process.html"><div class="thumb" style="aspect-ratio:4/5"><img class="img" src="images/portfolio/4uJ5kfLG0CCfLL2t5Rx8yynCuw.webp" width="1438" height="1552" alt="A design process diagram" loading="lazy" decoding="async"></div><p class="caption"><b>My process.</b> How I guide a design team from planning to iteration.</p></a>
+      <a class="figure reveal" href="about.html"><div class="thumb" style="aspect-ratio:4/5"><img class="img" src="images/portfolio/yeNwpJM2CUR6WnEfeKas8VQXEIY.webp" width="1202" height="1600" alt="Portrait of Amanda Loftis" loading="lazy" decoding="async"></div><p class="caption"><b>About me.</b> Greensboro, three cats, and a 110-year-old house.</p></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="stack stack--center reveal">
+      <span class="eyebrow">Say hello</span>
+      <h2 class="display display--md">Let&rsquo;s talk.</h2>
+      <a class="text-link" style="font-size:clamp(17px,1.6vw,22px)" href="mailto:amanda@amandaloftis.io">amanda@amandaloftis.io</a>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="footer__row">
-    <div>
-      <div class="footer__word">Amanda Loftis <em class="serif">Design Studio</em></div>
-      <div class="footer__note">Brand, web and everything in between.</div>
+  <div class="footer__top">
+    <div class="stack" style="gap:16px">
+      <div class="footer__word">Amanda Loftis</div>
+      <p class="caption" style="max-width:40ch">Amanda is a <b>product design leader</b> who specializes in applying cognitive behavioral science to UI design.</p>
+      <a class="text-link" href="mailto:amanda@amandaloftis.io">amanda@amandaloftis.io</a>
     </div>
-    <div class="footer__links">
-      <a href="index.html">Home</a>
-      <a href="work.html">Work</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Pages</span>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Experience</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/amanda.helene.loftis/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://dribbble.com/amandaloftis" target="_blank" rel="noopener">Dribbble</a>
+      </div>
     </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Product design leader</span>
+    <span>Greensboro, NC &middot; &copy; 2026</span>
   </div>
 </footer>
 
@@ -186,9 +218,15 @@
 })();
 </script>
 <script>
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('animate').forEach(function (el) { el.remove(); });
-}
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
 </script>
+
 </body>
 </html>
