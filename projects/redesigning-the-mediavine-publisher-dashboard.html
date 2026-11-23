@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Redesigning the Mediavine Publisher Dashboard — Amanda Loftis</title>
+<meta name="description" content="As the Director of User Experience leading our product design team, my primary goal was to tackle a growing challenge in our product ecosystem: a disjointe">
+<meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">Amanda Loftis</a>
+  <div class="nav__right">
+    <nav class="nav__links" aria-label="Main">
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="nav__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a class="btn btn--sm" href="mailto:amanda@amandaloftis.io">Get in touch</a>
+  </div>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">&times;</button>
+  <nav class="nav-drawer__links" aria-label="Mobile">
+    <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+  </nav>
+  <a class="nav-drawer__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  </a>
+</div>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main>
+<section class="section section--tight">
+    <div class="stack reveal">
+      <a class="back-link" href="../projects.html">&larr; See all projects</a>
+      <div class="chips"><a href="../projects.html#case-studies">Case Studies</a></div>
+      <h1 class="display display--md" style="max-width:16ch">Redesigning the Mediavine Publisher Dashboard</h1>
+      <p class="statement statement--sm" style="max-width:38ch"><b>As the Director of User Experience leading our product design team, my primary goal was to tackle a growing challenge in our product ecosystem: a disjointed user experience. Over time, our tools had expanded, leaving our users split between a legacy analytics dashboard and newer interfaces like Grow, which managed a separate set of features. While our users appreciated the data they could get from the legacy dashboard, they often mentioned that it was clunky, hard to navigate, and visually dated. This project would allow us to deliver a modern dashboard experience with the critical metrics our users rely on.</b></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(32px,4vw,56px)">
+    <div class="stage reveal"><img class="img" src="../images/portfolio/y9W0Nk96xIEdrts5WN8lkvLz8.webp" width="1600" height="900" alt="Redesigning the Mediavine Publisher Dashboard"></div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(40px,5vw,80px)">
+    <div class="prose">
+      <p>To accomplish this, I led a cross-functional initiative to completely redesign and unite the Mediavine Publisher Dashboard. The goal was to build an intuitive, mobile-first product that leveraged our existing design infrastructure while scaling for future feature development. I am very proud of the work my team and I did to create the new dashboard within the given constraints and hearing positive feedback from our users was incredibly validating once we launched.</p>
+      <h2>The Vision &amp; Strategic Goals</h2>
+      <p>I established three core pillars to guide our design strategy:</p>
+      <ol>
+        <li><strong>Unify the Experience: </strong>Bridge the gap between the separate platforms to create a singular, cohesive home for our publishers.</li>
+        <li><strong>Optimize Usability:</strong> Transform data-heavy layouts into clean, actionable, and intuitive insights.</li>
+        <li><strong>Scaleable Systems:</strong> Move away from ad-hoc UI design and establish a framework for rapid building and long-term adaptability.</li>
+      </ol>
+      <h2>Guardrails &amp; Core Requirements</h2>
+      <p>To ensure structural integrity and seamless adoption, I aligned the design and engineering teams around a strict set of functional constraints:</p>
+      <p><strong>Leverage Our Design System:</strong> We adopted the Material UI-based design system originally built for the Grow Dashboard. This gave us a proven, accessible foundation and immediately brought visual cohesion to the product ecosystem. <a href="mediavine-design-system.html">Learn more about the MV Design System.</a></p>
+      <p><strong>Atomic Design Architecture: </strong>We structured our design libraries using a strict atomic hierarchy. By breaking components down into reusable tokens and atoms, we unlocked the ability to rapidly prototype and adapt screens on the fly.</p>
+      <p><strong>Mobile-First Design:</strong> The legacy dashboard was heavily optimized for desktop, but our data showed publishers increasingly checking metrics on the move. We shifted our philosophy to a mobile-first approach, optimizing dense financial and traffic data for smaller viewports.</p>
+      <p><strong>Streamlined Information Architecture:</strong> My team eliminated complex nested menus and restricted top-level navigation items to reduce cognitive load and shorten the time-to-task for daily metrics.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/1fGVtWEAA63QPhiIgmxBwhgYCQo.webp" width="1600" height="939" alt="We overhauled how the settings were organized to make navigating more intuitive. Adding descriptions also improved disco" loading="lazy" decoding="async"><figcaption><em>(We overhauled how the settings were organized to make navigating more intuitive. Adding descriptions also improved discoverability by making it clear to users what each setting does.)</em></figcaption></figure></div>
+
+    <div class="prose">
+      <p><strong>Intuitive Data Visualization:</strong> We overhauled our charts and graphs, focusing on clear visual hierarchy so publishers could assess their performance and RPMs at a glance. We leaned heavily on user data to drive the layout of the metrics to make the most utilized ones the most accessible.</p>
+    </div>
+
+    <div class="prose-media media-grid">
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/9OMkl3P2Xzp024xfveYVEPd9It0.webp" width="1600" height="1070" alt="The top countries report in the legacy dashboard was difficult to scan and the bar chart was confusing." loading="lazy" decoding="async"><figcaption><em>(The top countries report in the legacy dashboard was difficult to scan and the bar chart was confusing.)</em></figcaption></figure>
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/xnWyDQOTwsMtRFX8okxTLr8NE.webp" width="1600" height="1227" alt="In the new dashboard, we turned the data into a map to allow users to quickly scan to see where their content was perfor" loading="lazy" decoding="async"><figcaption><em>(In the new dashboard, we turned the data into a map to allow users to quickly scan to see where their content was performing best.)</em></figcaption></figure>
+    </div>
+
+    <div class="prose">
+      <h2>The Design Process</h2>
+      <p>Leading a design team through a massive overhaul requires a balance between rigorous research and creative exploration. I structured our workflow into four distinct phases which helped break out the work into discreet deliverables:</p>
+      <h3>1. Research &amp; Discovery</h3>
+      <p>With input from Product and Support, I directed my team to gather qualitative and quantitative insights directly from our user base. We systematically analyzed feedback from publisher Facebook groups, conducted targeted user interviews, and synthesized pain points pulled from Support team escalations. We distilled our findings into themes and noted the frequency of each request, pain point, and issue which helped guide the product strategy.</p>
+      <h3>2. Ideation &amp; The "Frankenstein" Method</h3>
+      <p>With a clear understanding of user friction, we entered my personal favorite phase: the ideation phase. I encouraged the design team to pull broad inspiration into a massive collaborative "frankenstein" file—mixing layout concepts, data visualizations, and UI patterns from across the industry to conceptualize what might work for our unique dataset. After several of these brainstorming sessions, we had landed on an overall layout we were excited to test against our actual content.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/NbNcsBtYXah5DbwlN9p0i0X4oWo.webp" width="1600" height="869" alt="We &quot;frankensteined&quot; our early concepts by piecing together elements we liked from other UIs and refining our vision." loading="lazy" decoding="async"><figcaption><em>(We "frankensteined" our early concepts by piecing together elements we liked from other UIs and refining our vision.)</em></figcaption></figure></div>
+
+    <div class="prose">
+      <h3>3. Iteration &amp; System Refinement</h3>
+      <p>Once we isolated the strongest concepts, we refined them against our atomic design system. We transformed raw ideas into high-fidelity screens, ensuring every component adhered to our established Material UI constraints. In this phase, we also pulled in Engineering to sanity-check the feasibility of our designs and to gain alignment on each feature that would be included.</p>
+      <h3>4. Stakeholder Buy-In &amp; Functional Prototyping</h3>
+      <p>After presenting the strategic direction to executive stakeholders and securing buy-in, we moved quickly into production. We developed functional front-end shells for key pages, allowing stakeholders to experience the navigation and responsive layouts in a true browser environment before deep backend engineering began. We worked closely with Engineering at each step to make sure all states were defined, user interactions were clear, and testing was conducted during development.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/kQ1aRWMMFDGHny4NRpYUY4b61TQ.webp" width="1600" height="1062" alt="The initial version we sent to production after internal approval." loading="lazy" decoding="async"><figcaption><em>(The initial version we sent to production after internal approval.)</em></figcaption></figure></div>
+
+    <div class="prose">
+      <h2>Challenges</h2>
+      <p>A project of this scale is rarely without friction. As a manager, navigating these constraints required careful negotiation and resource management, which is one of my strong suits.</p>
+      <p>Because of the aggressive timeline for launch, as defined by executive leadership, it was critical to balance a complete architectural redesign with cross-functional collaboration and strict scope management. Specifically, I worked closely with product teams and engineering managers to establish the product scope and sprint planning to make sure the launch was a success. Throughout the project, I was responsible for maintaining the agreed-upon scope while also allowing for flexibility when an unpredicted issue arose or a feature needed to be added.</p>
+      <p>One of our biggest technical and design constraints was that we could not simply shut down the legacy dashboard or halt the Grow ecosystem. We had to architect a design solution that coexisted seamlessly alongside active platforms, ensuring zero disruption to live publisher revenue tracking during the rollout.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/WxFljqoVgPPLsNMayOVDNRFxWLo.webp" width="1600" height="1138" alt="This is one of our redesigned analytics pages for Ad Units. Previously, all metrics and their charting were all on one e" loading="lazy" decoding="async"><figcaption><em>(This is one of our redesigned analytics pages for Ad Units. Previously, all metrics and their charting were all on one endlessly-scrollable page. By breaking individual metrics out onto their own pages, we could make the "overview" more digestible while still allowing power users to get granular as needed.)</em></figcaption></figure></div>
+
+    <div class="prose">
+      <h2>The Launch &amp; Go-To-Market Strategy</h2>
+      <p>As we moved closer to launch, my focus shifted from core execution to validation and user adoption. Specifically, I was responsible for gathering user feedback to validate our design choices and refine edge-case interactions.</p>
+      <p>To do this, I took a multi-faceted approach which included:</p>
+      <ul>
+        <li><strong>Conducting remote and in-person user interviews</strong> with our early adopters and synthesizing the findings.</li>
+        <li>Previewing the new interface during <strong>publisher webinars</strong> to build excitement and prepare our users for the transition. I also fielded live questions from users interested in the new platform.</li>
+        <li><strong>Delivering a live demo and hosting hands-on workshops</strong> at MVCon to give our community an in-person, interactive look at the future of the platform.</li>
+        <li>Collaborating closely with our Support and Product Marketing teams to <strong>provide documentation, video walkthroughs, and migration guides</strong>.</li>
+      </ul>
+      <h2>Reflections &amp; Impact</h2>
+      <p>Success was measured by adoption of the new platform, overall user sentiment, and decreased usage of the legacy dashboard. By four months post-launch, nearly half of all publishers had adopted the new dashboard and were using it weekly as their main source of analytics. User sentiment was very positive which we gauged by comments in Facebook groups, subreddits, support tickets, in-app surveys, and user interviews. Finally, usage of the legacy dashboard slowly decreased as users got more familiar and comfortable with the new platform.</p>
+      <p>In the next phase of the project, the Grow platform will be sunset and all of its features rolled into the new Dashboard. After that, the legacy dashboard will also be sunset so that all users can utilize one central dashboard for all of their Mediavine experiences.</p>
+      <p>By anchoring this redesign in a robust atomic system and focusing heavily on user-driven insights, I am proud to have helped transform the publisher dashboard from a fragmented utility into a cohesive, scalable asset.</p>
+      <p>Read about the <a href="https://www.mediavine.com/blog/new-mediavine-dashboard/" target="_blank" rel="noopener">redesign</a> on the Mediavine <a href="https://www.mediavine.com/blog/mediavine-dashboard-rebuilt/" target="_blank" rel="noopener">Blog</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <nav class="project-nav" aria-label="More projects">
+      <a href="auditing-old-designs.html"><span class="eyebrow">&larr; Previous</span><span class="h3">Auditing Old Designs</span></a>
+      <a href="incorporating-ai-in-the-design-process.html"><span class="eyebrow">Next &rarr;</span><span class="h3">Incorporating AI in the Design Process</span></a>
+    </nav>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="stack" style="gap:16px">
+      <div class="footer__word">Amanda Loftis</div>
+      <p class="caption" style="max-width:40ch">Amanda is a <b>product design leader</b> who specializes in applying cognitive behavioral science to UI design.</p>
+      <a class="text-link" href="mailto:amanda@amandaloftis.io">amanda@amandaloftis.io</a>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Pages</span>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resume.html">Experience</a>
+        <a href="../process.html">Process</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/amanda.helene.loftis/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://dribbble.com/amandaloftis" target="_blank" rel="noopener">Dribbble</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Product design leader</span>
+    <span>Greensboro, NC &middot; &copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var scrim = document.getElementById('navScrim');
+  var closeBtn = document.getElementById('navDrawerClose');
+  function openDrawer() {
+    drawer.classList.add('open');
+    scrim.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    scrim.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+})();
+</script>
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

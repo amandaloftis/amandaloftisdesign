@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auditing Old Designs — Amanda Loftis</title>
+<meta name="description" content="It’s been about 5 years since I designed the original consumer-facing UI for Fluree’s data platform, Nexus, so I thought it would be a fun exercise to revi">
+<meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">Amanda Loftis</a>
+  <div class="nav__right">
+    <nav class="nav__links" aria-label="Main">
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="nav__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a class="btn btn--sm" href="mailto:amanda@amandaloftis.io">Get in touch</a>
+  </div>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <button class="nav-drawer__close" id="navDrawerClose" aria-label="Close menu">&times;</button>
+  <nav class="nav-drawer__links" aria-label="Mobile">
+    <a href="../index.html">Home</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../resume.html">Experience</a>
+      <a href="../process.html">Process</a>
+      <a href="../about.html">About</a>
+  </nav>
+  <a class="nav-drawer__social" href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  </a>
+</div>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main>
+<section class="section section--tight">
+    <div class="stack reveal">
+      <a class="back-link" href="../projects.html">&larr; See all projects</a>
+      <div class="chips"><a href="../projects.html#case-studies">Case Studies</a></div>
+      <h1 class="display display--md" style="max-width:16ch">Auditing Old Designs</h1>
+      <p class="statement statement--sm" style="max-width:38ch"><b>It’s been about 5 years since I designed the original consumer-facing UI for Fluree’s data platform, Nexus, so I thought it would be a fun exercise to review the designs and discuss what I would do differently today.</b></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(32px,4vw,56px)">
+    <div class="stage stage--orange reveal"><img class="img" src="../images/portfolio/9JznlNy7Tgh7W63c1Pva3qWKc.webp" width="1600" height="900" alt="Auditing Old Designs"></div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(40px,5vw,80px)">
+    <div class="prose">
+      <h2>Background</h2>
+      <p>Fluree’s initial offerings were limited to developers who wanted to host their own blockchain-backed database and who could query it using SQL. The goal of this project was to quickly stand up a web app that users who had either a deep or limited understanding of running queries could use to search datasets. We partnered with several organizations to seed the database and used a custom schema to standardize the data for easy querying using Fluree’s technology. With a short amount of time to launch and only a small team available to build the app, I designed Fluree’s first consumer-facing app, Nexus.</p>
+      <p>Looking back, there are plenty of things I would do differently if I were designing this app today, but there are also a handful of decisions I stand by and would recommend to other designers looking to create a similar product.</p>
+      <h3>Things I Would Keep the Same</h3>
+      <h3>Utilizing an existing design system</h3>
+      <p>For this project, I used Tailwind CSS, which our engineers were already familiar with. I strongly recommend leveraging a design system such as Material or Tailwind for most greenfield design projects. They’re quick to set up, easy to customize, include more than you need to get started, and are often accessible and WCAG-compliant out-of-the-box. This saves both you and your engineers a ton of time and lets you all focus on product-specific decisions instead of setting up custom components.</p>
+      <h3>Following familiar design patterns</h3>
+      <p>Since we knew our users were primarily engineers and data analysts, we wanted to emulate tools our user base were already familiar with, such as Github and Jupyter Notebook. You can see this inspiration on the main Profile pages and the way navigation is styled throughout the app.</p>
+    </div>
+
+    <div class="prose-media"><figure class="figure reveal"><img class="img" src="../images/portfolio/YkLwQksXSRVeNA6Xwfb4qUwUBk.webp" width="1600" height="885" alt="We wanted to incorporate familiar UI elements from tools our users knew, like Github and data repos." loading="lazy" decoding="async"><figcaption><em>(We wanted to incorporate familiar UI elements from tools our users knew, like Github and data repos.)</em></figcaption></figure></div>
+
+    <div class="prose">
+      <h3>Keeping a minimal aesthetic</h3>
+      <p>When I was initially researching our competitors, I realized that many of their UIs were difficult to navigate and utilitarian in design. Since our content was data-heavy and highly technical, I hypothesized that a minimal and streamlined UI would help to set us apart and reduce friction for adoption.</p>
+      <h3>Areas I Would Improve</h3>
+      <h3>Limiting brand colors</h3>
+      <p>Fluree’s brand colors played a huge role in the styling of the UI which, looking back, was unnecessary and a bit distracting. Now, I would limit the use of brand colors to design-only features, illustrations, and graphics and choose a more accessible palette for the UI. By over-utilizing the primary blue color, the user is overwhelmed by what to focus on, so I would restrict the blue to only main CTAs or important user actions.</p>
+      <h3>Remove repeated elements</h3>
+      <p>Typically, if you’re having to repeat UI elements often on the same page, it’s a sign that things could be streamlined. For example, each row in the Popular table has view icons and a “Run Query” CTA which looks cluttered. Today, I would explore a minimal arrow icon that would open a preview modal where a user could also choose to run the query.</p>
+    </div>
+
+    <div class="prose-media media-grid">
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/nL6LvWpxVs46OqigplaMEFpyiA.webp" width="1600" height="858" alt="Auditing Old Designs image" loading="lazy" decoding="async"></figure>
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/rHlliupyzpbBk2Bv4Y8nELGlFg.webp" width="1438" height="1600" alt="Auditing Old Designs image" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="prose">
+      <h3>Remove unnecessary elements</h3>
+      <p>We found that users rarely uploaded an image to represent their organization or their datasets, yet the UI displayed a placeholder image across the app. By removing this element, we could clear up more space for additional information, a longer description, or simply more breathing room.</p>
+      <h3>Leverage libraries when needed</h3>
+      <p>One area we spent a lot of time designing and iterating on was the discussion board feature. The engineering team spent several sprints building custom forum tooling after I spent significant time designing its precise layout. In hindsight, we could have pulled in a 3rd party tool or library to handle all of the forum features and simply styled it to match our app.</p>
+    </div>
+
+    <div class="prose-media media-grid">
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/4v7Rhbahu7jGD2tpK856dCwD5g4.webp" width="1600" height="994" alt="Auditing Old Designs image" loading="lazy" decoding="async"></figure>
+      <figure class="figure reveal"><img class="img" src="../images/portfolio/S8JUw2fGA6o0YOdRxPJ9m63TQYA.webp" width="1328" height="1600" alt="Auditing Old Designs image" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="prose">
+      <h3>Conclusion</h3>
+      <p>It’s always tough to critique your own work, especially years later, but the exercise is something I push myself to do often so I can reevaluate my design decisions and see which ones actually stood the test of time. The point of these design audits isn’t to completely rip apart your work, but rather to realize that there is always room to learn and improve. While there are many more things I would do differently if I were designing this app today, I appreciate the context I was working within at the time and the unique constraints that led to what myself and the team built.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <nav class="project-nav" aria-label="More projects">
+      <a href="how-hacking-psychology-can-make-you-a-better-usability-tester.html"><span class="eyebrow">&larr; Previous</span><span class="h3">How Hacking Psychology Can Make You a Better Usability Tester</span></a>
+      <a href="redesigning-the-mediavine-publisher-dashboard.html"><span class="eyebrow">Next &rarr;</span><span class="h3">Redesigning the Mediavine Publisher Dashboard</span></a>
+    </nav>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="stack" style="gap:16px">
+      <div class="footer__word">Amanda Loftis</div>
+      <p class="caption" style="max-width:40ch">Amanda is a <b>product design leader</b> who specializes in applying cognitive behavioral science to UI design.</p>
+      <a class="text-link" href="mailto:amanda@amandaloftis.io">amanda@amandaloftis.io</a>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Pages</span>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../resume.html">Experience</a>
+        <a href="../process.html">Process</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer__col">
+        <span class="eyebrow eyebrow--gray">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/amandaloftis/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/amanda.helene.loftis/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://dribbble.com/amandaloftis" target="_blank" rel="noopener">Dribbble</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Product design leader</span>
+    <span>Greensboro, NC &middot; &copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('navDrawer');
+  var scrim = document.getElementById('navScrim');
+  var closeBtn = document.getElementById('navDrawerClose');
+  function openDrawer() {
+    drawer.classList.add('open');
+    scrim.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    scrim.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+})();
+</script>
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

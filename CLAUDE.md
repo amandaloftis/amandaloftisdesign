@@ -4,298 +4,209 @@ Guidance for Claude Code when working in this repo.
 
 ## Project overview
 
-Marketing website for **Amanda Loftis Design Studio**, a one-person design
-studio based in Greensboro, NC, offering brand systems, websites,
-illustration, and copy — the whole digital presence built by one person
-instead of handed off between vendors.
+Personal portfolio site for **Amanda Loftis**, a product design leader
+in Greensboro, NC, who specializes in applying cognitive behavioral
+science to UI design (Director of UX at Mediavine 2022–2026, Director of
+UX and Brand at Fluree 2019–2022, earlier roles at Andmore and Elon
+University).
 
-Goals of the site: explain the studio's holistic pitch (one person, whole
-picture), showcase past projects, break down the four service pillars, tell
-Amanda's story on an About page, and convert visitors via a Contact page
-form.
+**History.** The repo previously held a mock "Amanda Loftis Design
+Studio" marketing site (services, contact form, six invented projects).
+In **November 2026** that was replaced:
+- **Content** now mirrors Amanda's live Framer site, www.amandaloftis.io:
+  same pages, project write-ups, testimonials, resume and images. The
+  live site is the source of truth for wording.
+- **Design** is a dark "product studio" look modeled on the feel of
+  electronicmaterialsoffice.com (see Design system).
 
-**As of September 2026 the site went through a full visual and structural
-redesign**, replacing an earlier cobalt/coral, Sora/Roboto-Serif single-page
-design (anchor-navigated, with a pricing section and a JS contact modal).
-That design (bright candy palette, ribbon marquees) was then restyled in
-**November 2026** into the current dark "product studio" look — black
-canvas, one orange accent, giant Instrument Serif headlines, wide Archivo
-statements, Space Mono labels — still built as five real, separate pages
-(see Design system).
-**There is no pricing page, no contact modal, and no booking-link CTA in
-the current design** — don't reintroduce them without being asked; they
-belonged to the previous iteration.
+There is **no services page, contact form, pricing or booking flow**.
+Contact is the `mailto:` email in the nav, the Home closing section and
+the footer. Don't reintroduce the old studio pages without being asked.
 
 ## Tech stack
 
 - **Plain HTML + CSS + vanilla JS. No framework, no bundler, no package.json.**
-- **One shared `styles.css`** — every HTML page links to it with
-  `<link rel="stylesheet" href="styles.css">` (or `../styles.css` from
-  inside `work/`). Don't move CSS inline per-page and don't fork
-  `styles.css` into a per-page copy.
-- JS is inline per-page in a `<script>` block — there's no shared JS file,
-  and that's fine at this size (see JS behavior below).
-- Fonts load from Google Fonts via `<link>` tags in every page's `<head>`
-  — no self-hosted font files.
-- No build step. Editing a file and opening it (or refreshing) in a browser
-  is the entire dev loop.
+- **One shared `styles.css`.** Top-level pages link `styles.css`; pages
+  in `projects/` link `../styles.css`. Don't put CSS inline per page or
+  fork the stylesheet.
+- JS is inline per page in `<script>` blocks (see JS behavior).
+- Fonts load from Google Fonts via `<link>` in every `<head>`.
+- No build step in the repo: edit a file, refresh the browser.
 
 ## File structure
 
 ```
-index.html        — Home page
-work.html          — Work index (filterable project grid)
-services.html       — Services page
-about.html            — About page
-contact.html           — Contact page (real page, not a modal)
-styles.css               — shared stylesheet for every page on the site
-images/
-  logo.png                 — legacy wordmark lockup from the previous design — currently unreferenced
-  avatar.png                — legacy About portrait from the previous design — currently unreferenced
-  Amanda Loftis.png           — legacy asset — currently unreferenced
-work/
-  piedmont-global-preschool.html   — project detail page
-  fluree.html                       — project detail page
-  date-night-questions.html          — project detail page
-  sable-and-fen.html                   — project detail page
-  ridgeline-trail-co.html                — project detail page
-  harbor-financial.html                    — project detail page
+index.html                 — Home
+projects.html              — all projects, filterable by category
+projects/<slug>.html       — 25 project pages (slugs match the live site's /projects/<slug>)
+resume.html                — Experience / resume (nav label "Experience")
+process.html               — My process
+about.html                 — About
+amanda-loftis-resume.pdf   — the "Download resume" file (copied from the live site)
+styles.css                 — shared stylesheet
+images/portfolio/*.webp    — every content image, named by its Framer image id
+images/logo.png, avatar.png, Amanda Loftis.png — legacy, unreferenced
 ```
 
-**All five top-level pages, `styles.css`, `images/`, and `work/` must stay
-in the same relative locations to each other.** Top-level pages link to
-`styles.css` and to each other directly by filename (`work.html`,
-`contact.html`, etc.); pages inside `work/` link back up with
-`../styles.css`, `../index.html`, `../work.html`, and so on. If any of
-these are renamed or moved, every page that references them needs
-updating, not just one.
+Page filenames match the live site's URLs (`/about`, `/process`,
+`/resume`, `/projects`, `/projects/<slug>`), so hosts that serve
+`page.html` at `/page` keep old links working. **If you rename or move a
+page, update every link to it**, including nav, drawer, footer, the
+prev/next links on project pages, and in-text links inside write-ups.
 
-The current design ships with **zero real photography** — every image slot
-on every page is a plain gray/tinted placeholder `<div>` labeled `IMAGE` or
-`PORTRAIT`. The `images/` files above are leftovers from the previous
-design and are not linked from any current page; don't wire them back in
-without being asked — when real photography is ready, replace the
-placeholder `.ph` divs with `<img>` tags at the same box dimensions and
-`border-radius`, using `object-fit: cover`.
+Images were downloaded from the live site's Framer CDN, scaled to at
+most 1600px wide and saved as WebP (quality 80). Every `<img>` has
+`width`/`height` attributes and `loading="lazy"`, except the first image
+on a page. Add new images the same way.
 
-## Page structure
+## Pages
 
-Five real, separate top-level pages — no anchor-scrolling single-pager, no
-client-side router, just plain `<a href="services.html">`-style links. Every
-page shares the same floating pill nav, footer, and scroll-reveal script.
+Every page shares the floating pill nav (Projects / Experience / Process
+/ About, a LinkedIn icon, and an orange "Get in touch" `mailto:` button),
+the mobile drawer, the footer, and the scroll-reveal script.
 
-1. **`index.html` (Home)** — a full-width glowing image panel (`.ph--hero
-   .ph--glow`) with the giant serif headline "Designed for you." and a
-   subline below it, plus a small `.hero-card` at the right ("Brand, web,
-   illustration & copy / Greensboro, NC" + a "Let's connect" button →
-   Contact). Then, in order: a "What I do here" statement linking to
-   Services; an image + "Strategy" statement two-up linking to Contact; a
-   6-panel "What I bring" grid (numbered 01–06); a dotted "Beyond the build"
-   panel (statement on the left; logistics copy, a "Sites built on" Wix /
-   Squarespace / Framer tag row and a button on the right); a 2×2 "Recent
-   projects" grid (4 of the 6 `work/*.html` pages, plus an "All work" link);
-   and a centered closing CTA with the giant serif "Let's make it."
-2. **`work.html` (Work)** — giant serif "Selected work." header, a
-   **working** filter row (All/Branding/Web/Illustration/Print `<button>`s
-   with `aria-pressed`, filtering by `data-tags` on each `.work-card`), and
-   a 6-card grid (image, caption, mono tags). Each card's image and title
-   link to its page under `work/`.
-3. **`services.html`** — glowing hero panel with the giant serif "What I do
-   best.", a two-column statement ("Take one piece or the whole system…"),
-   4 numbered service panels (Brand systems / Websites / Illustration &
-   imagery / Copy & content, each with mono tags), and a closing panel with
-   a "Built with" Wix/Squarespace/Framer tag row above the "Not sure which
-   piece you need?" CTA → Contact.
-4. **`about.html`** — "Hi, I'm Amanda." serif headline + statement + bio
-   paragraphs beside a tall portrait placeholder; then a centered spinning
-   orange starburst, the statement "Everything built with intention, none
-   of it off the shelf.", and 3 spec cards (9 yrs / 40+ / 1).
-5. **`contact.html`** — giant serif "Let's talk.", then a two-column split:
-   statement + studio email on the left, a dotted panel with the contact
-   form (Name/Email/Company/Message, `required` on Name/Email/Message) on
-   the right. The form is **front-end only** — see JS behavior.
+1. **`index.html` (Home)**: giant serif "Amanda Loftis", the tagline
+   statement, category chips linking to `projects.html#<category>`, and a
+   glowing `.stage` showing the dashboard project. Then: 6 featured
+   project cards, 3 testimonials (Kenrika Mazuch, Matthew Winger (blue
+   panel), Matt Grisafi), 4 experience rows linking to `resume.html#<job>`,
+   3 "Learn more" cards (Presentations / My process / About me), and a
+   closing "Let's talk." with the email.
+2. **`projects.html`**: all 25 project cards in the live site's order,
+   with All / Case Studies / Workshops / Fonts / Print / Branding filter
+   buttons. The filter reads and writes the URL hash
+   (`projects.html#fonts`), so other pages can deep-link to a category.
+3. **`projects/<slug>.html`**: back link, category chips, serif title,
+   intro statement, hero image on a `.stage`, then the write-up as
+   `.prose` (h2/h3/p/ul/ol/hr). Images between paragraphs are
+   `.prose-media`: one image full width, consecutive images in a
+   `.media-grid`, captions from the live site as `<figcaption>`. Ends
+   with previous/next project links (wrap-around, in `projects.html`
+   order). Links to other projects are relative (`fluree-nexus.html`);
+   external links open in a new tab.
+4. **`resume.html`**: "Resume." header with jump chips and a Download
+   resume button, then one section per job (`#mediavine`, `#fluree`,
+   `#andmore`, `#elon`: logo, years, title, company link, description,
+   highlight images with captions), `#presentations` (talks + "I've also
+   spoken at"), and `#specialty` (4 panels).
+5. **`process.html`**: intro, process diagrams, 6 numbered step panels,
+   and a blue panel linking to the AI case study.
+6. **`about.html`**: intro, 3 photos, "What I do" and "Tools I use" pill
+   lists, and a Favorite project panel (Date Night Questions).
 
-**`work/*.html` are real separate pages**, each a standalone HTML document
-(own `<head>`, nav, footer) covering one project: a mono back-to-work link,
-tag row, serif `<h1>` + one-line statement, a large glowing image
-placeholder, a 3-up gallery of labeled placeholders, a three-column
-write-up ("The brief" / "What we built" / "The result", each under an
-orange eyebrow), a hairline-topped meta row (platform, services, timeline),
-and a closing CTA panel linking to `../contact.html`. **These pages don't
-have their own contact form.**
+**Project categories** (from the live site's category pages) are in each
+card's `data-tags` and each project page's chips: `case-studies`,
+`workshops`, `fonts`, `print`, `branding`. When adding a project, add
+its card to `projects.html` in the right position, update the prev/next
+links on it and its two neighbors, and add it to Home's featured grid
+only if asked.
 
 ## Design system
 
-**As of November 2026 the site was restyled to a dark "product studio"
-look**, modeled on the feel of electronicmaterialsoffice.com: near-black
-canvas, one hot orange accent, huge light serif display headlines, wide
-grotesk "statement" paragraphs with a white lead and gray continuation,
-tiny orange monospace eyebrows, dark rounded panels, and a floating
-translucent pill nav. This replaced the September 2026 bright "candy"
-design (cream background, mint/royal/gold/peach tints, wavy ribbon
-marquees, circular "Let's Connect" badge) — don't reintroduce those pieces
-without being asked.
+Dark "product studio" look: near-black canvas, huge light serif display
+headlines, wide grotesk "statement" paragraphs (white lead, gray
+continuation), tiny monospace labels, dark rounded panels, glowing
+image stages, and a floating translucent pill nav.
 
-All design tokens are CSS custom properties defined once in `:root` at the
-top of `styles.css`. **Always use the existing variables instead of
-hardcoding new hex values.** If a genuinely new color is needed, add it as
-a named variable in `:root` rather than inlining a hex code, and say so.
+All tokens are CSS custom properties in `:root` at the top of
+`styles.css`. **Use the variables; don't hardcode hex values.** If a new
+color is really needed, add a named variable and say so.
 
 ### Colors (`:root`)
 
-| Variable | Hex | Used for |
+| Variable | Hex | Role |
 |---|---|---|
 | `--black` | `#000000` | page background |
-| `--surface` | `#111111` | panels/cards, footer, mobile drawer |
-| `--surface-2` | `#1A1A1A` | image placeholder base |
-| `--line` | `#2F2F2F` | hairlines, tag/filter outlines, input borders, hero card |
-| `--gray` | `#6D6D6D` | the gray "continuation" half of statements and captions, meta labels |
-| `--gray-light` | `#CACACA` | body copy, nav links, footer links |
-| `--white` | `#FFFFFF` | headlines, the bold lead of statements/captions |
-| `--daredevil` | `#FF5B22` | **the only accent**: buttons, eyebrows, panel numbers, nav dot, active filter, focus ring, starburst, image glows |
-| `--daredevil-dim` | `#7C2A0C` | deep orange for glow gradients |
-| `--nav-glass` | `rgba(47,47,47,.7)` | floating nav pill (with backdrop blur) |
+| `--surface` | `#111111` | panels, footer, drawer, project-nav cards |
+| `--surface-2` | `#1A1A1A` | image backgrounds, pill-list items |
+| `--line` | `#2F2F2F` | hairlines, outlines, image borders, nav pill |
+| `--gray` | `#6D6D6D` | gray half of statements/captions, neutral labels |
+| `--gray-light` | `#CACACA` | body copy, nav/footer links |
+| `--white` | `#FFFFFF` | headlines, bold leads |
+| `--daredevil` | `#FF5B22` | **actions**: `.btn`, nav dot, focus ring, orange glows |
+| `--blue` | `#256AEC` | **active/feature**: active filter, `.panel--blue`, blue glows in `.stage` |
+| `--sky` | `#A8EBFF` | **labels/highlights**: `.eyebrow`, panel numbers, years, quote marks, link underline and hover |
+| `--daredevil-dim` | `#7C2A0C` | deep orange for gradients |
 
-Keep the palette monochrome + one orange. Don't add a second accent color.
-The previous candy tokens (`--cream`, `--sand`, `--electric`, `--arctic`,
-`--royal`, `--gold`, `--peach`, `--periwinkle`, `--ink`) no longer exist.
+Keep those roles: orange = do something, blue = selected/featured
+surface, sky = label/highlight. Don't swap them around per page.
 
 ### Typography
 
-Loaded from Google Fonts in every page's `<head>`:
-`Archivo` (with the **`wdth` axis, 62–125**), `Instrument Serif`, `Space Mono`.
+Google Fonts: `Archivo` (with the `wdth` axis 62–125), `Instrument
+Serif`, `Space Mono`.
 
-- `--serif: 'Instrument Serif'` — **roman (non-italic) for giant display
-  headlines** (`.display`, `.display--md`, footer wordmark, mobile drawer
-  links), tight `-0.035em` tracking and `.86` line-height. Italic only for
-  the footer's "Design Studio".
-- `--sans: 'Archivo'` — everything else. `.statement` uses it **widened**
-  (`font-stretch: 118%`) at weight 500 with tight negative tracking; the
-  pattern is `<p class="statement"><b>White lead sentence.</b> gray
-  continuation</p>`. `.statement--sm`/`--xs` are smaller sizes. `.h3`,
-  buttons and `.spec__k` numbers also use widened Archivo. Body copy is
-  regular-width Archivo.
-- `--mono: 'Space Mono'` — small uppercase labels only: `.eyebrow` (orange;
-  `.eyebrow--gray` for neutral labels), `.tag`, filter buttons, form
-  labels, placeholder labels, back link, footer bottom line.
+- `--serif` (Instrument Serif, roman): giant display headlines only
+  (`.display`, `.display--md`, footer wordmark, drawer links).
+- `--sans` (Archivo): everything else. `.statement` (and `--sm`/`--xs`)
+  is widened (`font-stretch: 118%`), weight 500, tight negative
+  tracking, written as `<b>White lead.</b> gray continuation`.
+  `.caption` follows the same pattern at small size. `.h3`, `.btn`,
+  `.role__title` and `.prose` headings are also widened.
+- `--mono` (Space Mono): small uppercase labels: `.eyebrow`, `.tag`,
+  `.chips`, filters, `.back-link`, years, footer bottom line.
 
-### Recurring components (reuse — don't reinvent)
+### Components (reuse, don't reinvent)
 
-- **Floating nav** (`.nav`): fixed pill 8px from the top, glass background,
-  orange-dot serif brand "Amanda Loftis®" at left; links, Instagram icon
-  (`.nav__social`, placeholder handle `instagram.com/amandaloftisdesign` —
-  swap before launch) and a small orange "Let's talk" button at right. The
-  current page gets `aria-current="page"` and an orange dot. `<main>` has
-  64px top padding to clear it.
-- **Statement** (`.statement`) and **caption** (`.caption`): both use the
-  white-`<b>`-lead + gray-continuation pattern.
-- **Eyebrow** (`.eyebrow`): tiny orange mono label above most sections.
-- **Panels** (`.panel`): dark `#111` cards with 22px radius. `.panel--dots`
-  adds the 12px dot-grid texture; `.panel__num` is the orange mono "01".
-  Alternate dotted/plain panels within a grid.
-- **Spec cards** (`.panel.spec` + `.spec__k`/`.spec__v`): eyebrow + huge
-  wide number + label (About facts).
-- **Image placeholders** (`.ph`): dark gradient boxes with a mono
-  "IMAGE"/"PORTRAIT" label bottom-left. Modifiers: `.ph--glow` (orange
-  radial glow — the signature look), `.ph--dots`, `.ph--hero` (tall hero),
-  `.ph--wide` (16:10), `.ph--tall` (4:5). When real photography is ready,
-  replace with `<img>` at the same radius using `object-fit: cover`.
-- **Figure** (`.figure`): media + caption + optional `.tags`, used for work
-  cards and project previews.
-- **Buttons** (`.btn`): orange, 8px radius, widened Archivo, auto-appended
-  `↗` arrow, orange glow on hover. `.btn--sm`, `.btn--ghost` variants.
-- **Tags** (`.tags` > `.tag`): outlined mono pills. Platform names
-  (Wix/Squarespace/Framer) are plain text tags, not hand-drawn logo marks.
-- **Text link** (`.text-link`): underlined secondary link ("View the
-  services", "All work", email).
-- **Starburst** (`.star`): 16-point orange SVG on About, spinning 40s;
-  disabled under `prefers-reduced-motion` in CSS.
-- **Footer** (`.footer`): rounded `#111` panel inset from the page edges,
-  big serif wordmark, Pages/Elsewhere link columns, mono bottom line.
-
-Layout helpers: `.section` (big top padding; `--tight` variant), `.stack`
-(`--center`), `.split` + `.split__aside`, `.row-between`, and `.grid`
-(`--2`/`--3`/`--4`, all `auto-fit`/`minmax`).
+- `.nav` / `.nav-drawer` / `.nav-scrim`: floating pill nav + mobile drawer.
+- `.display`, `.statement`, `.caption`, `.eyebrow`, `.h3`, `.body`, `.text-link`.
+- `.btn` (orange, auto `↗` arrow; `--sm`, `--ghost`).
+- `.tags`/`.tag` (static outlined labels); `.chips` (outlined link pills).
+- `.panel` (`--dots`, `--blue`, `--line`) with `.panel__num`.
+- `.img` (bordered rounded image); `.thumb` (fixed-ratio cover crop with
+  hover zoom); `.stage` (glowing panel presenting one image; `--orange`
+  variant; project pages alternate the two).
+- `.figure` + `figcaption`; `.work-grid` + `.work-card`; `.filters`.
+- `.quotes`/`.quote` (testimonials), `.roles`/`.role` (experience rows),
+  `.pill-list` (skills/tools), `.prose` + `.prose-media` + `.media-grid`
+  (write-ups), `.project-nav` (prev/next).
+- Layout: `.section` (`--tight`), `.stack` (`--center`), `.split` +
+  `.split__aside`, `.row-between`, `.grid` (`--2`/`--3`/`--4`).
 
 ## JS behavior
 
-All JS is inline per page. Every page carries:
+Every page has, inline:
+- `document.documentElement.classList.add('js')` in `<head>`.
+- **Mobile nav drawer** script (IDs `navToggle`, `navDrawer`, `navScrim`,
+  `navDrawerClose`): opens/closes on toggle, close button, scrim, link
+  click and Escape; locks body scroll. **Nav links live in three places on
+  every page (`.nav__links`, `.nav-drawer__links`, footer) — update all
+  three on every page.**
+- **Scroll reveal**: `.reveal` elements fade up when they enter the
+  viewport. Hidden only under `html.js` + `prefers-reduced-motion:
+  no-preference`, so content is always visible without JS or with
+  reduced motion.
 
-- A one-liner in `<head>`: `document.documentElement.classList.add('js')`.
-- **Mobile nav drawer**: below 680px CSS hides `.nav__right` and shows
-  `.nav__toggle`. `#navDrawer` and `#navScrim` sit as siblings right after
-  `</header>`. Same IDs everywhere (`navToggle`, `navDrawer`, `navScrim`,
-  `navDrawerClose`); the script opens/closes on toggle, close button, scrim,
-  link click and Escape, and locks body scroll while open. **When changing
-  nav links, update the desktop `.nav__links`, the `.nav-drawer__links`
-  and the footer link column on every page** — they're not shared markup.
-- **Scroll reveal**: elements with `.reveal` fade up when they enter the
-  viewport (IntersectionObserver adds `.is-in`). CSS only hides them when
-  `html.js` is present **and** `prefers-reduced-motion: no-preference`, so
-  content is always visible without JS or with reduced motion.
+`projects.html` also has the filter script (buttons with `aria-pressed`,
+hides `.work-card`s by `data-tags`, syncs `location.hash`).
 
-Page-specific:
+## Content notes
 
-- **Work filtering** (`work.html` only): clicking a `#filters button` sets
-  its `aria-pressed="true"` (clearing the others) and toggles `hidden` on
-  each `.work-card` by matching `data-filter` against its `data-tags`.
-- **Contact form**: `contact.html`'s `<form onsubmit="return false">` is
-  **not wired to a backend** — submitting no-ops. To make it send, replace
-  that with a real handler (Formspree/Basin, or `fetch()` to a backend).
-
-There are no ribbons or SMIL animations any more, so the old
-"strip `<animate>` for reduced motion" script is gone.
-
-## Content that is still placeholder
-
-Be aware these are illustrative, not real, and shouldn't be presented to
-end users as final without checking with the person running this project:
-
-- **Every image on every page** is a plain `.ph` placeholder
-  box — there is no real photography or portrait anywhere on the current
-  site.
-- The 6 project names and one-line blurbs on `work.html` (Piedmont Global
-  Preschool, Fluree, Date Night Questions, Sable & Fen, Ridgeline Trail
-  Co., Harbor Financial) come from the design handoff. **Everything else on
-  their linked `work/*.html` pages — the "brief"/"what we built"/"result"
-  write-ups, gallery labels, platform/services/timeline meta — was invented
-  to fill out the detail-page template** and needs replacing with real
-  project details before this goes live.
-- The contact email (`hello@amandaloftis.io`, shown on `contact.html`) is
-  the address from the design handoff — confirm it's the address Amanda
-  wants published before launch.
-- The About page's "9 yrs / 40+ / 1" facts are from the design handoff;
-  confirm they're current.
-- There is currently **no pricing page and no booking-link CTA anywhere on
-  the site** — both existed in the previous design and were dropped in
-  this redesign. If pricing or scheduling needs to come back, that's a
-  deliberate addition to plan, not something to quietly restore.
+- Wording, testimonials, dates and images come from www.amandaloftis.io
+  as of November 2026. A few short section intros were written for this
+  design and aren't on the live site; check with Amanda before treating
+  them as final: Home "Featured work", "Kind words", "Experience"
+  ("Nearly a decade…") and "Learn more" card captions; the Projects
+  page intro; and the Resume "Presentations" intro.
+- Alt text: the live site has alt text on only a few images. The rest
+  use generic alt text (the project title or caption); improve it when
+  real descriptions are available.
+- Social links: LinkedIn `linkedin.com/in/amandaloftis`, Instagram
+  `instagram.com/amanda.helene.loftis`, Dribbble `dribbble.com/amandaloftis`.
 
 ## Conventions for making changes
 
-- CSS lives in the shared `styles.css`, not per-page. New pages should
-  `<link>` to it (with the correct relative path for their folder depth),
-  not copy styles inline. JS is still fine inline per-page at this
-  project's size.
-- Reuse existing CSS custom properties for color; reuse `.statement`/
-  `.caption`/`.eyebrow`/`.panel`/`.ph`/`.figure`/`.btn`/`.tag` and the
-  layout helpers (`.section`, `.stack`, `.split`, `.grid--*`) rather than
-  writing new one-off styles or inline styles.
-- New pages under `work/` should follow the existing template: same
-  `<head>` font links, same `<header>`/`<footer>` markup with paths
-  adjusted for the folder depth, same back-link/tags/hero/gallery/write-up/
-  meta/CTA structure, and `.reveal` on the blocks. Don't invent a different page shell per project.
-- This design is fully fluid (`clamp()` for type/spacing, `auto-fit`/
-  `minmax()` grids, `flex-wrap` everywhere) — **the only fixed `@media`
-  breakpoint in `styles.css` is the 680px one that swaps the nav between
-  its inline links and the hamburger/drawer** (see JS behavior above).
-  Don't add other fixed breakpoints for general layout; keep using
-  `clamp()`/`auto-fit` for anything that isn't a hard on/off UI toggle like
-  the nav. Verify layout changes at ~375px, ~768px, and ~1440px, and also
-  check just above/below 680px specifically when touching the nav.
-- Respect the existing `prefers-reduced-motion` handling (the CSS rule for
-  `.star`, and the reveal styles that only apply under
-  `no-preference`) — don't add new animations without accounting for it.
+- CSS goes in `styles.css`. Reuse tokens and the components above
+  instead of one-off inline styles.
+- New project pages copy an existing `projects/*.html` shell (same
+  `<head>`, nav with `aria-current` on Projects, footer, scripts).
+- Fully fluid layout (`clamp()`, `auto-fit`/`minmax()`, `flex-wrap`).
+  **The only fixed `@media` breakpoint is 680px** (nav links ↔ hamburger).
+  Don't add other layout breakpoints. Check changes at ~375px, ~768px
+  and ~1440px, and just above/below 680px when touching the nav. Nothing
+  should scroll horizontally (`.prose` uses `overflow-wrap: anywhere`
+  for long URLs).
+- Respect `prefers-reduced-motion` for any new animation.
 
 ## Design inspiration references
 
@@ -303,8 +214,8 @@ A reference board of 4 outside design examples, kept here for future design
 decisions — palettes, type pairings, and layout motifs to pull from when
 asked to design something new or push an existing design further. **None of
 this is a spec for the current site** — it's a menu, not a directive. (The
-current dark design keeps two of these throughlines — oversized display
-type and small tracked labels — but deliberately drops the candy palette
+current dark design keeps two of these throughlines, oversized display
+type and small tracked labels, but deliberately drops the pastel palette
 and sticker/collage motifs.)
 
 ### 1. Brand swatch cards (style-guide reference)
@@ -376,5 +287,5 @@ principles rather than any one palette:
 If asked to design something new in this project (a new section, a new
 one-off page, a social template, etc.), these are the references to pull
 texture and confidence from — while keeping the current Instrument Serif/
-Archivo/Space Mono type pairing and black + daredevil-orange palette
+Archivo/Space Mono type pairing and black + orange/blue/sky palette
 documented above.
