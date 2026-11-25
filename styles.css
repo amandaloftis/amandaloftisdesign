@@ -465,6 +465,9 @@ a:hover > .thumb img { transform: scale(1.035); }
 .prose-media { max-width: 1200px; margin: clamp(28px, 4vw, 56px) auto; }
 .prose-media + .prose-media { margin-top: var(--gap); }
 .media-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); align-items: start; }
+/* Two columns at most, every image cropped to the same 3:2 frame */
+.media-grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(380px, calc((100% - var(--gap)) / 2))), 1fr)); }
+.media-grid--2 .img { aspect-ratio: 3 / 2; object-fit: cover; }
 
 .project-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--gap); }
 .project-nav a { display: flex; flex-direction: column; gap: 10px; padding: clamp(18px, 2vw, 28px); border-radius: var(--r-lg); background: var(--surface); transition: background .2s ease; }

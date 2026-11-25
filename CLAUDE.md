@@ -66,8 +66,8 @@ Every page shares the floating pill nav (Projects / Experience / Process
 the mobile drawer, the footer, and the scroll-reveal script.
 
 1. **`index.html` (Home)**: giant serif "Amanda Loftis", the tagline
-   statement, category chips linking to `projects.html#<category>`, and a
-   glowing `.stage` showing the dashboard project. Then: 6 featured
+   statement, and category chips linking to `projects.html#<category>`
+   (no hero image; the first featured card is the first image). Then: 6 featured
    project cards, 3 testimonials (Kenrika Mazuch, Matthew Winger (blue
    panel), Matt Grisafi), 4 experience rows linking to `resume.html#<job>`,
    3 "Learn more" cards (Presentations / My process / About me), and a
@@ -87,8 +87,10 @@ the mobile drawer, the footer, and the scroll-reveal script.
 4. **`resume.html`**: "Resume." header with jump chips and a Download
    resume button, then one section per job (`#mediavine`, `#fluree`,
    `#andmore`, `#elon`: logo, years, title, company link, description,
-   highlight images with captions), `#presentations` (talks + "I've also
-   spoken at"), and `#specialty` (4 panels).
+   highlight images with captions), `#presentations` (photos, talks + "I've also
+   spoken at"), and `#specialty` (4 panels). All Resume images sit in
+   `.media-grid--2`: at most two columns, and every image cropped to the
+   same 3:2 frame (`object-fit: cover`) so they're all one size.
 5. **`process.html`**: intro, process diagrams, 6 numbered step panels,
    and a blue panel linking to the AI case study.
 6. **`about.html`**: intro, 3 photos, "What I do" and "Tools I use" pill
@@ -159,7 +161,8 @@ Serif`, `Space Mono`.
 - `.figure` + `figcaption`; `.work-grid` + `.work-card`; `.filters`.
 - `.quotes`/`.quote` (testimonials), `.roles`/`.role` (experience rows),
   `.pill-list` (skills/tools), `.prose` + `.prose-media` + `.media-grid`
-  (write-ups), `.project-nav` (prev/next).
+  (write-ups; `.media-grid--2` = max two columns, uniform 3:2 crops),
+  `.project-nav` (prev/next).
 - Layout: `.section` (`--tight`), `.stack` (`--center`), `.split` +
   `.split__aside`, `.row-between`, `.grid` (`--2`/`--3`/`--4`).
 
